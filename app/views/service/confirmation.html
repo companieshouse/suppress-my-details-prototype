@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Confirmation page
+{% endblock %}
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+
+        <h1 class="govuk-panel__title">You must now pay for the document
+        </h1>
+
+        <div class="govuk-panel__body govuk-!-margin-bottom-6">
+          You will need to make a note of your reference number<br>
+          <strong>HDJ2123F</strong>
+        </div>
+
+        <div class="govuk-panel__body govuk-!-margin-bottom-6">
+          <a href="" style="
+     color: white;
+ ">Pay for the documents</a>
+        </div>
+
+      </div>
+      <p class="govuk-body">
+        <h2 class="govuk-heading-m">How long it takes</h2>
+        <p class="govuk-body">It takes around x working days for a decision.</p>
+
+        {{ govukWarningText({
+  text: "Due to the impact of coronavirus (COVID-19) it may take longer than usual for post to be delivered.",
+  iconFallbackText: "Warning"
+}) }}
+
+        <h2 class="govuk-heading-m">How to contact us</h2>
+        <p class="govuk-body">If the process is taking longer than you'd expect, email us at
+          <a href="email">enquiries@companieshouse.gov.uk</a>.</p>
+        <p class="govuk-body">Our telephone contact centre is now closed to protect the welfare of our employees during the coronavirus (COVID-19) outbreak.</p>
+
+        <h2 class="govuk-heading-m">What do you want to do next?</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="/print">Print this page for your records</a>
+          </li>
+          <li>
+            <a href="/sign-out">Sign out</a>
+          </li>
+        </ul>
+
+        <p class="govuk-body govuk-!-margin-top-7">
+          Help us to
+          <a href="feedback">improve this service by completing our quick survey</a>.
+        </p>
+
+      </div>
+    </div>
+
+  {% endblock %}
