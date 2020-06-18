@@ -13,19 +13,36 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+      <script>
+        function myFunction() {
+          var copyText = document.getElementById("myInput");
+          copyText.select();
+          copyText.setSelectionRange(0, 99999);
+          document.execCommand("copy");
+        }
+      </script>
       <div class="govuk-panel govuk-panel--confirmation">
 
-        <h1 class="govuk-panel__title">You must now pay for the document
+        <h1 class="govuk-panel__title">You must now pay for the document(s)
         </h1>
 
         <div class="govuk-panel__body govuk-!-margin-bottom-6">
+
           You will need to make a note of your reference number<br>
-          <strong>HDJ2123F</strong>
         </div>
+        <input type="text" value="HDJ2123F" id="myInput" style="
+              height: 30px;
+              font-size: 28px;
+              width: 135px;
+              margin-bottom: 10px;
+          ">
+
+        <button class="govuk-button govuk-button--secondary" onclick="myFunction()" onmouseout="outFunc()">
+          Copy reference number
+        </button>
 
         <div class="govuk-panel__body govuk-!-margin-bottom-6">
-          <a href="" style="
+          <a href="https://www.gov.uk/payments/apply-to-protect-your-details/pay-for-example-service" style="
      color: white;
  ">Pay for the documents</a>
         </div>
