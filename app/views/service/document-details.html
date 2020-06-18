@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Document details
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="service-address" method="GET">
+
+        <h1 class="govuk-heading-l">
+          Document details
+        </h1>
+
+        <p>You can find the document title, type and registration date on the Companies House service:
+          <a href="">https://beta.companieshouse.gov.uk</a>
+        </p>
+
+        {{ govukInput({
+          label: {
+            text: "Company name",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+classes: "govuk-input--width-10",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Company number",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+classes: "govuk-input--width-10",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Document type",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          hint: {
+            text: "Please give the document type or, where that document is a form, the number and title of that form."
+          },
+          classes: "govuk-input--width-10",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "Document registration date",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 12 11 2007"
+  }
+}) }}
+
+        {{ govukButton({
+           text: "Continue"
+         }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
