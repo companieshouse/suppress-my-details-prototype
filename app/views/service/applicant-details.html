@@ -51,6 +51,34 @@
             spellcheck: "false"
           }
         }) }}
+
+        {{ govukRadios({
+          idPrefix: "how-contacted-conditional",
+          name: "how-contacted",
+           classes: "govuk-radios--inline",
+          fieldset: {
+            legend: {
+              text: "Are your details currently protected under Section 243 of the Companies Act 2006? ",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "This applies to 243, ZF & ZG protection"
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
         {{ govukButton({
            text: "Continue"
          }) }}
