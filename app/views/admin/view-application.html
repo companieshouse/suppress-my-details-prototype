@@ -1,0 +1,383 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Review application
+{% endblock %}
+
+{% block beforeContent %}
+  <script>
+
+    window.onscroll = function () {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        document.getElementById("myBtn").style.display = "block";
+      } else {
+        document.getElementById("myBtn").style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+  </script>
+  <style>
+    div.sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      background-color: white;
+      padding-top: 30px;
+      border-bottom: 10px solid #005ea5;
+      z-index: 1;
+    }
+    #myBtn {
+      display: none;
+      /* Hidden by default */
+      position: sticky;
+      /* Fixed/sticky position */
+      bottom: 20px;
+      /* Place the button at the bottom of the page */
+      z-index: 99;
+      /* Make sure it does not overlap */
+
+    }
+  </style>
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@companieshouse.gov.uk
+    </li>
+    <li>
+      <a href="/account/login" id="user-signout">Sign out</a>
+    </li>
+  </ul>
+  <a class="govuk-back-link no-print" href="/applications/applications-list-mvp">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="sticky">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <span class="govuk-caption-xl">Application - N4OBD-U2SGP</span>
+        <h1 class="govuk-heading-xl">Miss Tanya Jones</h1>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <p class="float-right">Current status:
+          <strong>
+            Received
+          </strong>(15:34 on Tuesday 30 July)</p>
+        <a href="change-status" role="button" class="govuk-button" style="
+    float: right;">
+          Change the status
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class=" govuk-tabs" data-module=" tabs" ="tabs" ">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-l">Overview</h2>
+      </div>
+    </div>
+    <p>Application received at 15:34 on Tuesday 30 July</p>
+
+    <h2 class="govuk-heading-m">Reasons for application</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reasons for serious risk
+        </dt>
+        <dd class="govuk-summary-list__value">
+          These are my reasons.
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Any other relevant information
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No other info
+        </dd>
+      </div>
+    </dl>
+    <h2 class="govuk-heading-m">The person applying</h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are you applying to protect your own details?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+      </div>
+
+    </dl>
+    <h2 class="govuk-heading-m">The applicant who needs protection</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Applying as a director or as a PSC?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Person of significant control (PSC)
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Level of protection needed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            PSC identity
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Title
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Miss
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            First name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Tanya
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Middle name(s)
+          </dt>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Last name(s)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Jones
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            31/04/1972
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="mailto:tanya@email.com">tanya@email.com</a>
+          </dd>
+        </div>
+      </dl>
+      <h2 class="govuk-heading-m">Home address</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Building and street
+          </dt>
+          <dd class="govuk-summary-list__value">
+            test building
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Town or city
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Cardiff
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            County
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Test
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Postcode
+          </dt>
+          <dd class="govuk-summary-list__value">
+            CF92 1AB
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Country
+          </dt>
+          <dd class="govuk-summary-list__value">
+            UK
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">The company whose activities pose a risk to the individual(s)</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Already registered at Companies House
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Company number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="https://beta.companieshouse.gov.uk/company/03116636">03116636</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Company name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Way Ahead Community Services
+          </dd>
+        </div>
+
+      </dl>
+
+      <h2 class="govuk-heading-m">Supporting evidence</h2>
+
+      {{ govukTable({
+                      caption: "Evidence that has been uploaded",
+                      captionClasses: "govuk-visually-hidden",
+                      firstCellIsHeader: false,
+                      head: [
+                        {
+                          text: "File name"
+                        },
+                        {
+                          text: "Size"
+                        },
+                        {
+                          text: "Status"
+                        }
+                      ],
+                      rows: [
+                        [
+                          {
+text: 'this-is-an-example-of-a-really-really-long-document-name.pdf'
+                          },
+                          {
+                            text: '2.0 KB'
+                          },
+                          {
+                            text: 'Awaiting virus check'
+                          }
+                        ],
+                        [
+                          {
+                            text: 'image-one.jpg'
+                          },
+                          {
+                            text: '1.0 KB'
+                          },
+                          {
+                            html: '<a href="javascript:void(0)">Available for download<span class="govuk-visually-hidden">image-one.jpg</span></a>'
+                          }
+                        ],
+                        [
+                          {
+                            text: 'additional-evidence-provided.pdf'
+                          },
+                          {
+                            text: '2.0 KB'
+
+                          },
+                          {
+                            text: 'Failed virus check'
+                          }
+                        ],
+                        [
+                          {
+                            text: 'more-evidence.pdf'
+                          },
+                          {
+                            text: '1.0 KB'
+
+                          },
+                          {
+                            text: 'Unavailable - contact support'
+                          }
+                        ]
+                      ]
+                    }) }}
+      <h2 class="govuk-heading-m">Other companies</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Any other companies?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other company number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href="https://beta.companieshouse.gov.uk/company/07411234">07411234</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Other company name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ABC LTD
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Payment information</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Payment ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ABCDEfghij123456
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Application reference
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ABcd123
+          </div>
+
+        </dl>
+
+        <button onclick="topFunction()" class="govuk-button govuk-button--secondary float-right no-print" id="myBtn" title="Back to top">Back to top</button>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

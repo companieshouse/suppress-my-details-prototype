@@ -1,0 +1,278 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  View applications
+{% endblock %}
+
+{% block beforeContent %}
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@companieshouse.gov.uk
+    </li>
+    <li>
+      <a href="/account/login" id="user-signout">Sign out</a>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Applications to remove a home address from the Companies House register (SR01)
+      </h1>
+    </div>
+  </div>
+  <br>
+  <div class="govuk-grid-column-full-width">
+    <p class="hmcts-pagination__results">Showing
+      <b>12</b>
+      results</p>
+    {{ govukTable({
+
+ firstCellIsHeader: true,
+ class:sortable,
+ head: [
+ {
+ html: "<a href=''>Reference</a>"
+ },
+ {
+ html: "<a href=''>Name</a>"
+ },
+ {
+ html: "<a href=''>Company number</a>"
+ },
+ {
+ html: "<a href=''>Company name</a>"
+},
+ {
+ html: " <a href='' class='sort'>Application received</a>",
+ format: "numeric"
+ }
+ ],
+ rows: [
+
+ [{
+ html: " <a href='/applications/view-application-tabs-243'>N4OBD-U2SGP</a>"
+ },
+ {
+  text: "Freya Smith"
+ },
+ {
+  text: "12346578"
+ },
+ {
+  text: "Freya Smith"
+ },
+ {
+  text: "11 Jun 2019",
+  format: "numeric"
+ }
+ ],    [
+  {
+  html: " <a href='/applications/view-application-tabs-ZG'>HZ119-98TW8</a>"
+  },{
+  text: "Robert Carroll"
+  },
+  {
+   text: "12346578"
+  },
+  {
+   text: "Freya Smith"
+  },
+  {
+   text: "11 July 2019",
+   format: "numeric"
+  }
+
+  ],[
+    {
+    html: " <a href='/applications/view-application-tabs-ZF'>57VJY-32E5N</a>"
+    },
+    {
+     text: "Freya Smith"
+    },
+    {
+     text: "12346578"
+    },
+
+    {
+     text: "Tanya Jones"
+    },
+    {
+     text: "01 Jun 2018",
+     format: "numeric"
+    }
+    ],  [
+    {
+    html: " <a href=''>P0T56-UT981</a>"
+    },{
+    text: "Jeff Green"
+    },
+    {
+     text: "12346578"
+    },
+    {
+     text: "Freya Smith"
+    },
+    {
+     text: "11 Sep 2018",
+     format: "numeric"
+    }
+
+    ], [
+ {
+ html: " <a href=''>P0T56-UT985</a>"
+ },
+
+ {
+  text: "Freya Smith"
+ },
+ {
+  text: "12346578"
+ },
+ {
+  text: "Freya Smith"
+ },
+ {
+  text: "01 Jun 2019",
+  format: "numeric"
+ }
+ ],
+ [
+ {
+ html: " <a href='/'>WRY65-P82WE</a>"
+ },
+ {
+ text: "Sally Thomas"
+ },
+ {
+  text: "12346578"
+ },
+ {
+  text: "Freya Smith"
+ },
+ {
+  text: "02 Apr 2019",
+  format: "numeric"
+ }
+ ],
+ [
+ {
+ html: " <a href='/'>61UY5-XTY74</a>"
+ },
+ {
+ text: "Joe Green"
+ },
+ {
+ text: "12346578"
+ }, {
+  text: "Joe Green"
+  },
+
+ {
+  text: "11 Sep 2018",
+  format: "numeric"
+ }
+ ],
+ [
+ {
+ html: " <a href='/'>TL119-9P8M8</a>"
+ },{
+ text: "Joe Green"
+ },
+ {
+  text: "12346578"
+ },
+ {
+  text: "Freya Smith"
+ },
+ {
+  text: "11 Sep 2018",
+  format: "numeric"
+ }
+
+ ],
+
+ [
+ {
+ html: " <a href='/'>ZT988-NF163</a>"
+ },{
+ text: "Joe Green"
+ },
+ {
+  text: "12346578"
+ },
+ {
+  text: "Freya Smith"
+ },
+ {
+  text: "11 Sep 2018",
+  format: "numeric"
+ }
+
+ ],
+
+ [
+ {
+ html: " <a href='/applications/view-application-mrceleb'>B822E-G66D3</a>"
+ },
+ {
+ text: "Chris Jones"
+ },
+ {
+  text: "12345678"
+ },
+ {
+  text: "Freya Smith"
+ },
+ {
+  text: "02 Jun 2018",
+  format: "numeric"
+ }
+ ],
+ [
+ {
+ html: " <a href='/applications/view-application-sue-barker'>65TR0-00PR4</a>"
+ },
+
+ {
+ text: "Chris Jones"
+ },
+ {
+  text: "12345678"
+ },
+ {
+  text: "Freya Smith"
+ },
+ {
+  text: "02 Jun 2018",
+  format: "numeric"
+ }
+ ],
+ [
+ {
+ html: " <a href='/'>N7F88-K2HR8</a>"
+ },
+ {
+ text: "Sally Thomas"
+ },{
+  text: "12345678"
+ },
+ {
+  text: "Freya Smith"
+ },
+ {
+  text: "02 Apr 2018",
+  format: "numeric"
+ }
+ ]
+
+ ]
+ }) }}
+    <p class="hmcts-pagination__results">Showing
+      <b>12</b>
+      results</p>
+
+  </div>
+
+{% endblock %}
