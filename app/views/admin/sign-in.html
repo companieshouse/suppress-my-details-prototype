@@ -1,4 +1,4 @@
-{% extends "layout-admin.html" %}
+{% extends "layout.html" %}
 {% block pageTitle %}
   Sign in
 {% endblock %}
@@ -44,7 +44,7 @@
 
       {{ govukButton({
           text: "Sign in",
-          href: "/applications/applications-list"
+          href: "applications-list-mvp"
         }) }}
     </form>
 
