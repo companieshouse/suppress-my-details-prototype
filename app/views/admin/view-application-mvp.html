@@ -174,17 +174,9 @@
       </div>
     </dl>
 
-    <h2 class="govuk-heading-m">The company whose activities pose a risk to the individual(s)</h2>
+    <h2 class="govuk-heading-m">Document details</h2>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Already registered at Companies House
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Yes
-        </dd>
-      </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Company number
@@ -202,101 +194,6 @@
         </dd>
       </div>
 
-    </dl>
-
-    <h2 class="govuk-heading-m">Supporting evidence</h2>
-
-    {{ govukTable({
-                      caption: "Evidence that has been uploaded",
-                      captionClasses: "govuk-visually-hidden",
-                      firstCellIsHeader: false,
-                      head: [
-                        {
-                          text: "File name"
-                        },
-                        {
-                          text: "Size"
-                        },
-                        {
-                          text: "Status"
-                        }
-                      ],
-                      rows: [
-                        [
-                          {
-text: 'this-is-an-example-of-a-really-really-long-document-name.pdf'
-                          },
-                          {
-                            text: '2.0 KB'
-                          },
-                          {
-                            text: 'Awaiting virus check'
-                          }
-                        ],
-                        [
-                          {
-                            text: 'image-one.jpg'
-                          },
-                          {
-                            text: '1.0 KB'
-                          },
-                          {
-                            html: '<a href="javascript:void(0)">Available for download<span class="govuk-visually-hidden">image-one.jpg</span></a>'
-                          }
-                        ],
-                        [
-                          {
-                            text: 'additional-evidence-provided.pdf'
-                          },
-                          {
-                            text: '2.0 KB'
-
-                          },
-                          {
-                            text: 'Failed virus check'
-                          }
-                        ],
-                        [
-                          {
-                            text: 'more-evidence.pdf'
-                          },
-                          {
-                            text: '1.0 KB'
-
-                          },
-                          {
-                            text: 'Unavailable - contact support'
-                          }
-                        ]
-                      ]
-                    }) }}
-    <h2 class="govuk-heading-m">Other companies</h2>
-
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Any other companies?
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Yes
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Other company number
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="https://beta.companieshouse.gov.uk/company/07411234">07411234</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Other company name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          ABC LTD
-        </dd>
-      </div>
     </dl>
 
     <h2 class="govuk-heading-m">Payment information</h2>
