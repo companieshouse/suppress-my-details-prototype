@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Apply to remove your home address from the Companies House register (SR01)
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="upload" method="GET">
+        <h1 class="govuk-heading-xl">
+          {% if serviceName %}
+            {{ serviceName }}
+          {% endif %}
+        </h1>
+        <p class="govuk-body-l">Use this service to apply as an individual under section 1088 to remove your home address, or part of it, from the public Companies House register.
+        </p>
+
+        <h2 class="govuk-heading-s">You can use this service if you are (or were) a:</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>company officer</li>
+          <li>person with significant control (PSC)</li>
+          <li>subscriber or member of a company, LLP, societas Europaea (SE) or eligible Scottish partnership</li>
+          <li>officer or permanent representative of an overseas company</li>
+          <p></ul>
+          <p class="govuk-body">You’ll need to know which documents contain your home address. Check this by finding your company on the
+            <a href="">Companies House register.</a>
+          </p>
+
+          {{ govukWarningText({
+ text: "You cannot ask to remove your company’s registered office address, even if it’s your home address.",
+   iconFallbackText: "Warning"
+ }) }}
+
+          <a href="applicant-details" role="button" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">Start now</a>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <aside class="app-related-items" role="complementary">
+            <h2 class="govuk-heading-m" id="subsection-title">
+              Guidance
+            </h2>
+            <nav role="navigation" aria-labelledby="subsection-title">
+              <ul class="govuk-list
+    govuk-!-font-size-16">
+                <li>
+                  <a href="https://www.gov.uk/government/publications/restricting-the-disclosure-of-your-psc-information" target="_blank">
+                    Restricting the disclosure of your information
+                    <span class="govuk-visually-hidden">Link opens in new tab/window</span>
+                  </a>
+              </ul>
+            </nav>
+          </aside>
+        </div>
+      </div>
+    {% endblock %}
