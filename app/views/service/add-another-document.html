@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Would you like to add another document?
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="service-address" method="GET">
+
+        {{ govukRadios({
+   classes: "govuk-radios--inline",
+   idPrefix: "changed-name",
+   name: "changed-name",
+   fieldset: {
+     legend: {
+       text: "Would you like to add another document?",
+       isPageHeading: true,
+       classes: "govuk-fieldset__legend--l"
+     }
+   },
+   items: [
+     {
+       value: "yes",
+       text: "Yes"
+     },
+     {
+       value: "no",
+       text: "No"
+     }
+   ]
+ }) }}
+
+        {{ govukButton({
+    text: "Continue"
+  }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
