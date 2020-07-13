@@ -19,6 +19,10 @@
         </h1>
         <p class="govuk-body-l">Use this service to apply to remove your home address, or part of it, from the public Companies House register.
         </p>
+        {{ govukWarningText({
+text: "You cannot ask to remove your company’s registered office address, even if it’s your home address.",
+ iconFallbackText: "Warning"
+}) }}
         <p class="govuk-body">It costs £32 to remove your address from each document.</p>
         <p class="govuk-body govuk-!-font-weight-bold">You can use this sevice if you are, or were:</p>
         <ul class="govuk-list govuk-list--bullet">
@@ -36,14 +40,8 @@
   <li>to know which documents contain your home address, including the document type and the document registration date</li>
 </ul>
           <p class="govuk-body">You can check the document details by finding your company on the
-            <a href="">Companies House service.</a>
+          <a href="https://beta.companieshouse.gov.uk/">Companies House service</a>.
           </p>
-
-          {{ govukWarningText({
- text: "You cannot ask to remove your company’s registered office address, even if it’s your home address.",
-   iconFallbackText: "Warning"
- }) }}
-
           {{ govukButton({
 text: "Start now",
 classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8",
