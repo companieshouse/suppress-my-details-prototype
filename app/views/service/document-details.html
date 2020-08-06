@@ -21,15 +21,9 @@
         <h1 class="govuk-heading-l">
           Document details
         </h1>
-
-        <p>You can find the document title, type and registration date on the Companies House service:
-          <a href="">https://beta.companieshouse.gov.uk</a>
+        <p class="govuk-body">You can find the document details on the
+          <a target="_blank" href="https://beta.companieshouse.gov.uk/">Companies House register</a>.
         </p>
-
-        {{ govukInsetText({
-  text: "It costs £32 to remove your address from each document."
-}) }}
-
         {{ govukInput({
           label: {
             text: "Company name",
@@ -52,12 +46,12 @@ classes: "govuk-input--width-10",
         }) }}
         {{ govukInput({
           label: {
-            text: "Document type",
+            text: "Document description",
             classes: "govuk-label--s",
             isPageHeading: false
           },
           hint: {
-            text: "Please give the document type or, where that document is a form, the number and title of that form."
+            text: "Tell us which document you want to remove your home address from. For example, the document type, or the form number and title."
           },
           classes: "govuk-input--width-10",
           id: "event-name",
