@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Is there another individual who needs protection based on the activities of
+  {{ data['company-address-for-testing'] }}?
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="https://products.payments.service.gov.uk/pay/c28511d0ac4a4a2e8ad8b93fe1463a65" method="get" class="form">
+        <h1 class="govuk-heading-l">
+          Payment review
+        </h1>
+
+        {{ govukTable({
+                caption: "Payment review",
+                captionClasses: "govuk-visually-hidden",
+                firstCellIsHeader: true,
+                head: [
+                  {
+                    text: "Item"
+                  },
+                  {
+                    text: "Amount to pay",
+                    format: "numeric"
+
+                  }
+                ],
+                rows: [
+                  [
+                    {
+                        text: "Apply to remove your home address from the Companies House register"
+                    },
+                    {
+                      text: "£32",
+                      format: "numeric"
+
+                    }
+                  ]
+                ]
+              }) }}
+
+        <h3 class="govuk-heading-m">The total amount to pay is £32</h3>
+
+        {{ govukButton({
+              text: "Continue to payment"
+            }) }}
+
+      </form>
+
+    </div>
+    <!--govuk-grid-row-->
+  </div>
+  <!--govuk-grid-column-two-thirds-->
+
+</main>
+</div>
+<!---govuk-width-container-->
+
+{% endblock %}

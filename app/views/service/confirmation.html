@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Confirmation page
+{% endblock %}
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Application submitted</h1>
+        <div class="govuk-panel__body">
+          Your reference number<br>
+          <strong>N4OBD-U2SGP</strong>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
