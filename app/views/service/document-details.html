@@ -26,8 +26,9 @@
           <a target="_blank" href="https://beta.companieshouse.gov.uk/">Companies House register</a>.</p>
           <p class="govuk-body">You'll need:</p>
           <ul class="govuk-list govuk-list--bullet">
-            <li>the date the document was added to the register</li>
+            <li>the name of the document (shown on the PDF of the document)</li>
             <li>the document description as it appears on the company filing history</li>
+            <li>the date the document was added to the register</li>
           </ul>
 
         {{ govukInput({
@@ -57,7 +58,7 @@ classes: "govuk-input--width-10",
             isPageHeading: false
           },
           hint: {
-            text: "Tell us which document you want to remove your home address from. For example, the document type, or the form number and title."
+            text: "Tell us the name and description of the document you want to remove your home address from. For example, CH01 - Director's details changed for Mr John Smith on 2 January 2020"
           },
           classes: "govuk-input--width-10",
           id: "event-name",
