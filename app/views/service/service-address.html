@@ -20,15 +20,20 @@
 
         {% call govukFieldset({
           legend: {
-            text: "Please provide a service address",
+            text: "What address do you want to replace your home address with?",
             classes: "govuk-fieldset__legend--l",
             isPageHeading: true
           }
 
         }) %}
         <span id="changed-name-hint" class="govuk-hint">
-          This address will replace your home address and will be shown on the public register.
+          This will be the company's service address (or ‘correspondence’ address) and is shown on the public register.
         </span>
+        <p class="govuk-body">You do not need to provide this if:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>the company is dissolved</li>
+  <li>the person whose address you want to remove is no longer acting for the company</li>
+</ul>
         {{ govukInput({
             label: {
               html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'

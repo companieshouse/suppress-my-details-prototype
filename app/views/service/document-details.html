@@ -19,11 +19,17 @@
       <form action="add-another-document" method="GET">
 
         <h1 class="govuk-heading-l">
-          Document details
+          What are the document details?
         </h1>
-        <p class="govuk-body">You can find the document details on the
-          <a target="_blank" href="https://beta.companieshouse.gov.uk/">Companies House register</a>.
-        </p>
+</p>
+        <p class="govuk-body">You can check which documents contain your home address on the
+          <a target="_blank" href="https://beta.companieshouse.gov.uk/">Companies House register</a>.</p>
+          <p class="govuk-body">You'll need:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the date the document was added to the register</li>
+            <li>the document description as it appears on the company filing history</li>
+          </ul>
+
         {{ govukInput({
           label: {
             text: "Company name",
@@ -63,7 +69,7 @@ classes: "govuk-input--width-10",
   namePrefix: "passport-issued",
   fieldset: {
     legend: {
-      text: "Document registration date",
+      text: "Document date",
       isPageHeading: false,
       classes: "govuk-fieldset__legend--s"
     }
