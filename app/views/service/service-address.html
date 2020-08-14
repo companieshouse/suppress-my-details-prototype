@@ -30,10 +30,10 @@
           This will be the company's service address (or ‘correspondence’ address) and is shown on the public register.
         </span>
         <p class="govuk-body">You do not need to provide this if:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>the company is dissolved</li>
-  <li>the person whose address you want to remove is no longer acting for the company</li>
-</ul>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the company is dissolved</li>
+          <li>the person whose address you want to remove is no longer acting for the company</li>
+        </ul>
         {{ govukInput({
             label: {
               html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
@@ -81,6 +81,15 @@
             name: "address-postcode",
             autocomplete: "postal-code"
           }) }}
+
+        {{ govukInput({
+                label: {
+                  text: "Country"
+                },
+                classes: "govuk-!-width-two-thirds",
+                id: "address-country",
+                name: "address-country"
+              }) }}
 
         {% endcall %}
 
