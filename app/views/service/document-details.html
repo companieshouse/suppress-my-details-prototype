@@ -58,27 +58,64 @@ classes: "govuk-input--width-10",
             isPageHeading: false
           },
           hint: {
-            text: "Tell us the name and description of the document you want to remove your home address from. For example, CH01 - Director's details changed for Mr John Smith on 2 January 2020"
+            text: "Tell us the name and description of the document you want to remove your home address from. For example, CH01 - Director's details changed for Mr John Smith on 12 November 2019"
           },
           classes: "govuk-input--width-20",
           id: "document-description",
           name: "document-description"
         }) }}
 
-      {{ govukDateInput({
-  id: "document-date",
-  namePrefix: "document-date",
-  fieldset: {
-    legend: {
-      text: "Document date",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  hint: {
-    text: "For example, 12 11 2007"
-  }
-}) }}
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+          Document date
+
+        </legend>
+    </legend>
+    <div id="passport-issued-hint" class="govuk-hint">
+      For example, 18 11 2019
+    </div>
+    <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What is the document date?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+  </div>
+</details>
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
 
       {{ govukButton({
            text: "Continue"
