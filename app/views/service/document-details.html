@@ -23,11 +23,11 @@
         </h1>
       </p>
       <p class="govuk-body">You can check which documents contain your home address on the
-        <a target="_blank" href="https://beta.companieshouse.gov.uk/">Companies House register</a>.</p>
+      <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.</p>
       <p class="govuk-body">You'll need:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>the name of the document (shown on the PDF of the document)</li>
-        <li>the document description as it appears on the company filing history</li>
+        <li>the document name, which is shown on the PDF of the document</li>
+        <li>the document description as it appears in the company filing history</li>
         <li>the date the document was added to the register</li>
       </ul>
 
@@ -53,12 +53,12 @@ classes: "govuk-input--width-10",
         }) }}
       {{ govukInput({
           label: {
-            text: "Document description",
+            text: "Document name and description",
             classes: "govuk-label--s",
             isPageHeading: false
           },
           hint: {
-            text: "Tell us the name and description of the document you want to remove your home address from. For example, CH01 - Director's details changed for Mr John Smith on 12 November 2019"
+            text: "For example, CH01 - Director's details changed for Mr John Smith on 12 November 2019"
           },
           classes: "govuk-input--width-20",
           id: "document-description",
@@ -70,7 +70,7 @@ classes: "govuk-input--width-10",
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
 
-              Document date
+              Date the document was added to the register
 
             </legend>
           </legend>
@@ -80,11 +80,11 @@ classes: "govuk-input--width-10",
           <details class="govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                What is the document date?
+                Where can I find the document date?
               </span>
             </summary>
             <div class="govuk-details__text">
-              This is the date the document was added to the register. You can find it in the first column of the filing history next to the document description.
+            You can find it in the date column of the filing history on the <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.
             </div>
           </details>
           <div class="govuk-date-input" id="document-date">
