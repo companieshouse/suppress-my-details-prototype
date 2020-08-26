@@ -14,7 +14,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+      <h1 class="govuk-heading-l">Check your answers before submitting your application</h1>
 
       <h2 class="govuk-heading-m">Presenter details</h2>
 
@@ -48,27 +48,10 @@
            rows: [
              {
                key: {
-                 text: "First name"
+                 text: "Full name"
                },
                value: {
-                 text: "Sarah"
-               },
-               actions: {
-                 items: [
-                   {
-                     href: "#",
-                     text: "Change",
-                     visuallyHiddenText: "name"
-                   }
-                 ]
-               }
-             },
-             {
-               key: {
-                 text: "Last name"
-               },
-               value: {
-                 text: "Phillips"
+                 text: "Sarah Phillips"
                },
                actions: {
                  items: [
@@ -152,7 +135,7 @@
                     text: "Company Name"
                   },
                   value: {
-                    text: "ABC Ltd"
+                    text: "ABC LTD"
                   },
                   actions: {
                     items: [
@@ -169,7 +152,7 @@
                     text: "Company number"
                   },
                   value: {
-                    text: "32164758"
+                    text: "09164758"
                   },
                   actions: {
                     items: [
@@ -203,7 +186,7 @@
                     text: "Document date"
                   },
                   value: {
-                    text: "5 January 2008"
+                    text: "5 December 2019"
                   },
                   actions: {
                     items: [
@@ -268,16 +251,16 @@
                        ]
                      }) }}
 
-      <h2 class="govuk-heading-m">Now send your application</h2>
+      <h2 class="govuk-heading-m">Submit your application</h2>
 
-      <p class="govuk-body">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you have provided are correct.</p>
 
       <form action="payment-review" method="post" novalidate="novalidate">
 
         <input type="hidden" name="answers-checked" value="true">
 
         {{ govukButton({
-             text: "Accept and Continue"
+             text: "Accept and Submit"
            }) }}
 
       </form>
