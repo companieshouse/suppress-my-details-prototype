@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Are you applying to remove your own details?
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="applicant-details" method="get">
+
+        {% set nameHtml %}
+        {{ govukInput({
+                id: "presenter-name",
+                name: "presenter-name",
+                type: "email",
+                classes: "govuk-!-width-one-third",
+                label: {
+                  text: "What is your name?"
+                },
+        hint: {
+          text: "We will use this name when we contact you about the application"
+        },
+                attributes: {
+                  spellcheck: "false"
+                }
+              }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+                  idPrefix: "individualsApplying",
+                  name: "individualsApplying",
+                  fieldset: {
+                    attributes : {
+                      'data-required': "data-required",
+                      'data-error': "Select yes if you’re applying to remove your own details"
+                      },
+                    legend: {
+                      text: "Are you applying to remove your own details?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--l"
+                    }
+                  },
+                  items: [
+                    {
+                      value: "yes",
+                      text: "Yes",
+                      checked: checked("individualsApplying", "yes")
+                    },
+                    {
+                      value: "no",
+                      text: "No",
+                      conditional: {
+              html: nameHtml
+            },
+                      checked: checked("individualsApplying", "no")
+                    }
+                  ]
+                }) }}
+        {{ govukButton({
+                text: "Continue"
+              }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

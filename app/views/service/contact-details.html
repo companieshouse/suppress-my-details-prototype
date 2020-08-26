@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Applicant's details
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="payment-review" method="GET">
+
+        {{ govukInput({
+          label: {
+            text: "Email address",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "We’ll use this email address to contact you about this application."
+          },
+          classes: "govuk-input--width-20",
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukButton({
+           text: "Continue"
+         }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
