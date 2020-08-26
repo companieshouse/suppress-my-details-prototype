@@ -16,17 +16,76 @@
 
       <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
 
-      <h2 class="govuk-heading-m">Personal details</h2>
+      <h2 class="govuk-heading-m">Presenter details</h2>
 
       {{ govukSummaryList({
            classes: 'govuk-!-margin-bottom-9',
            rows: [
              {
                key: {
-                 text: "Name"
+                 text: "Are you applying to remove your own details?"
                },
                value: {
-                 text: "Sarah Philips"
+                 text: "Yes"
+               },
+               actions: {
+                 items: [
+                   {
+                     href: "#",
+                     text: "Change",
+                     visuallyHiddenText: "name"
+                   }
+                 ]
+               }
+             }
+           ]
+         }) }}
+
+      <h2 class="govuk-heading-m">Applicant details</h2>
+
+      {{ govukSummaryList({
+           classes: 'govuk-!-margin-bottom-9',
+           rows: [
+             {
+               key: {
+                 text: "First Name"
+               },
+               value: {
+                 text: "Sarah"
+               },
+               actions: {
+                 items: [
+                   {
+                     href: "#",
+                     text: "Change",
+                     visuallyHiddenText: "name"
+                   }
+                 ]
+               }
+             },
+             {
+               key: {
+                 text: "Last Name"
+               },
+               value: {
+                 text: "Phillips"
+               },
+               actions: {
+                 items: [
+                   {
+                     href: "#",
+                     text: "Change",
+                     visuallyHiddenText: "name"
+                   }
+                 ]
+               }
+             },
+             {
+               key: {
+                 text: "Has the applicant used a different name for business purposes in the last 20 years?"
+               },
+               value: {
+                 text: "No"
                },
                actions: {
                  items: [
@@ -54,86 +113,18 @@
                    }
                  ]
                }
-             },
-             {
-               key: {
-                 text: "Address"
-               },
-               value: {
-                 html: "72 Guild Street<br>London<br>SE23 6FH"
-               },
-               actions: {
-                 items: [
-                   {
-                     href: "#",
-                     text: "Change",
-                     visuallyHiddenText: "address"
-                   }
-                 ]
-               }
-             },
-             {
-               key: {
-                 text: "Contact details"
-               },
-               value: {
-                 html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
-               },
-               actions: {
-                 items: [
-                   {
-                     href: "#",
-                     text: "Change",
-                     visuallyHiddenText: "contact details"
-                   }
-                 ]
-               }
              }
            ]
          }) }}
 
-      <h2 class="govuk-heading-m">Application details</h2>
+      <h2 class="govuk-heading-m">Home address details</h2>
 
       {{ govukSummaryList({
            classes: 'govuk-!-margin-bottom-9',
            rows: [
              {
                key: {
-                 text: "Previous application number"
-               },
-               value: {
-                 text: "502135326"
-               },
-               actions: {
-                 items: [
-                   {
-                     href: "#",
-                     text: "Change",
-                     visuallyHiddenText: "previous application number"
-                   }
-                 ]
-               }
-             },
-             {
-               key: {
-                 text: "Licence type"
-               },
-               value: {
-                 text: "For personal use"
-               },
-               actions: {
-                 items: [
-                   {
-                     href: "#",
-                     text: "Change",
-                     visuallyHiddenText: "licence type"
-                   }
-                 ]
-               }
-             },
-             {
-               key: {
-                 text: "Home address"
+                 text: "What home address would you like to remove?"
                },
                value: {
                  html: "72 Guild Street<br>London<br>SE23 6FH"
@@ -144,23 +135,6 @@
                      href: "#",
                      text: "Change",
                      visuallyHiddenText: "home address"
-                   }
-                 ]
-               }
-             },
-             {
-               key: {
-                 text: "Licence period"
-               },
-               value: {
-                 text: "Valid for 6 months"
-               },
-               actions: {
-                 items: [
-                   {
-                     href: "#",
-                     text: "Change",
-                     visuallyHiddenText: "licence period"
                    }
                  ]
                }
