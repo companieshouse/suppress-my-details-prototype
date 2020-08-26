@@ -25,10 +25,10 @@
                 type: "email",
                 classes: "govuk-!-width-one-third",
                 label: {
-                  text: "What is your name?"
+                  text: "What is your full name?"
                 },
         hint: {
-          text: "We will use this name when we contact you about the application"
+          text: "We'll use this when we contact you about the application."
         },
                 attributes: {
                   spellcheck: "false"
@@ -45,7 +45,7 @@
                       'data-error': "Select yes if you’re applying to remove your own details"
                       },
                     legend: {
-                      text: "Are you applying to remove your own details?",
+                      text: "Are you applying to remove your own home address?",
                       isPageHeading: true,
                       classes: "govuk-fieldset__legend--l"
                     }
@@ -58,7 +58,7 @@
                     },
                     {
                       value: "no",
-                      text: "No",
+                      text: "No, I'm applying on someone else's behalf",
                       conditional: {
               html: nameHtml
             },
