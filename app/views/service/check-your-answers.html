@@ -23,7 +23,7 @@
            rows: [
              {
                key: {
-                 text: "Are you applying to remove your own details?"
+                 text: "Are you applying to remove your own home address?"
                },
                value: {
                  text: "Yes"
@@ -48,7 +48,7 @@
            rows: [
              {
                key: {
-                 text: "First Name"
+                 text: "First name"
                },
                value: {
                  text: "Sarah"
@@ -65,7 +65,7 @@
              },
              {
                key: {
-                 text: "Last Name"
+                 text: "Last name"
                },
                value: {
                  text: "Phillips"
@@ -142,16 +142,142 @@
            ]
          }) }}
 
+      <h2 class="govuk-heading-m">Document details</h2>
+
+      {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Company Name"
+                  },
+                  value: {
+                    text: "ABC Ltd"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "name"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Company number"
+                  },
+                  value: {
+                    text: "32164758"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "name"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Document description"
+                  },
+                  value: {
+                    text: "CH01 - Director's details changed for Mr John Smith on 12 November 2019"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "name"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Document date"
+                  },
+                  value: {
+                    text: "5 January 2008"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "date of birth"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+
+      <h2 class="govuk-heading-m">Replacement address details</h2>
+
+      {{ govukSummaryList({
+                 classes: 'govuk-!-margin-bottom-9',
+                 rows: [
+                   {
+                     key: {
+                       text: "What address do you want to replace your home address with?"
+                     },
+                     value: {
+                       html: "27 Staple Street<br>London<br>SE35 6YP"
+                     },
+                     actions: {
+                       items: [
+                         {
+                           href: "#",
+                           text: "Change",
+                           visuallyHiddenText: "home address"
+                         }
+                       ]
+                     }
+                   }
+                 ]
+               }) }}
+
+      <h2 class="govuk-heading-m">Contact details</h2>
+
+      {{ govukSummaryList({
+                       classes: 'govuk-!-margin-bottom-9',
+                       rows: [
+                         {
+                           key: {
+                             text: "Email address"
+                           },
+                           value: {
+                             text: "sphillips@gmail.com"
+                           },
+                           actions: {
+                             items: [
+                               {
+                                 href: "#",
+                                 text: "Change",
+                                 visuallyHiddenText: "name"
+                               }
+                             ]
+                           }
+                         }
+                       ]
+                     }) }}
+
       <h2 class="govuk-heading-m">Now send your application</h2>
 
       <p class="govuk-body">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
 
-      <form action="/form-handler" method="post" novalidate="novalidate">
+      <form action="payment-review" method="post" novalidate="novalidate">
 
         <input type="hidden" name="answers-checked" value="true">
 
         {{ govukButton({
-             text: "Accept and send"
+             text: "Accept and Continue"
            }) }}
 
       </form>
