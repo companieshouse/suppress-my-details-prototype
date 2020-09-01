@@ -23,50 +23,51 @@
 text: "You cannot ask to remove your company’s registered office address, even if it’s your home address.",
  iconFallbackText: "Warning"
 }) }}
-{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
-{{ govukInsetText({
+        {{ govukInsetText({
   text: "It costs £32 to remove your home address from each document. For now, you can only remove your home address from one document at a time using this online service."
 }) }}
-        <p class="govuk-body">If you want to remove your home address from more than one document, you’ll need to start a new online application for each document or <a href="https://www.gov.uk/government/publications/apply-to-remove-your-home-address-from-the-public-register-sr01" class="govuk-link">complete a paper application (SR01)</a>.</p>
-          <p class="govuk-body govuk-!-font-weight-bold">You'll need to know which document contains your home address by checking the
-      <a href="https://beta.companieshouse.gov.uk/" class="govuk-link">Companies House register</a>. Make a note of:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>the date it was added to the register</li>
-            <li>the document name, which is shown on the PDF of the document</li>
-            <li>the document description as it appears in the company filing history</li>
-          </ul>
-          <p class="govuk-body govuk-!-font-weight-bold">You'll also need:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>the applicant’s name, date of birth and any former names used for business purposes in the last 20 years</li>
-            <li>a different address to replace the home address, unless the company is closed or the applicant is no longer acting for the company</li>
-            <li>the company name and number</li>
-            <li>a credit or debit card</li>
-          </ul>
-                  <p class="govuk-body">It takes around 10 minutes to complete this application.</p>
-          {{ govukButton({
+        <p class="govuk-body">If you want to remove your home address from more than one document, you’ll need to start a new online application for each document or
+          <a href="https://www.gov.uk/government/publications/apply-to-remove-your-home-address-from-the-public-register-sr01" class="govuk-link">complete a paper application (SR01)</a>.</p>
+        <p class="govuk-body govuk-!-font-weight-bold">You'll need to know which document contains your home address by checking the
+          <a href="https://beta.companieshouse.gov.uk/" class="govuk-link">Companies House register</a>. Make a note of:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the date it was added to the register</li>
+          <li>the document name, which is shown on the PDF of the document</li>
+          <li>the document description as it appears in the company filing history</li>
+        </ul>
+        <p class="govuk-body govuk-!-font-weight-bold">You'll also need:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the applicant’s name, date of birth and any former names used for business purposes in the last 20 years</li>
+          <li>a different address to replace the home address, unless the company is closed or the applicant is no longer acting for the company</li>
+          <li>the company name and number</li>
+          <li>a credit or debit card</li>
+        </ul>
+        <p class="govuk-body">It takes around 10 minutes to complete this application.</p>
+        {{ govukButton({
 text: "Start now",
 classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8",
 isStartButton: true
 }) }}
-        </div>
-
-        <div class="govuk-grid-column-one-third">
-          <aside class="app-related-items" role="complementary">
-            <h2 class="govuk-heading-m" id="subsection-title">
-              Guidance
-            </h2>
-            <nav role="navigation" aria-labelledby="subsection-title">
-              <ul class="govuk-list
-    govuk-!-font-size-16">
-                <li>
-                  <a href="https://www.gov.uk/government/publications/restricting-the-disclosure-of-your-psc-information" target="_blank">
-                    Restricting the disclosure of your information
-                    <span class="govuk-visually-hidden">Link opens in new tab/window</span>
-                  </a>
-              </ul>
-            </nav>
-          </aside>
-        </div>
       </div>
-    {% endblock %}
+
+      <div class="govuk-grid-column-one-third">
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-heading-m" id="subsection-title">
+            Guidance
+          </h2>
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="govuk-list
+    govuk-!-font-size-16">
+              <li>
+                <a href="https://www.gov.uk/government/publications/restricting-the-disclosure-of-your-psc-information" target="_blank">
+                  Restricting the disclosure of your information
+                  <span class="govuk-visually-hidden">Link opens in new tab/window</span>
+                </a>
+            </ul>
+          </nav>
+        </aside>
+      </div>
+    </div>
+  {% endblock %}
