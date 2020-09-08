@@ -18,24 +18,82 @@
 
       <form action="payment-review" method="GET">
 
+        <h1 class="govuk-heading-l">
+          What are your contact details?
+        </h1>
+
+        <p class="govuk-body">We’ll use these to contact you about your application.</p>
+
         {{ govukInput({
-          label: {
-            text: "What is your email address?",
-            classes: "govuk-label--l",
-            isPageHeading: true
-          },
-          hint: {
-            text: "We’ll use this to contact you about this application."
-          },
-          classes: "govuk-input--width-20",
-          id: "email",
-          name: "email",
-          type: "email",
-          autocomplete: "email",
-          attributes: {
-            spellcheck: "false"
-          }
-        }) }}
+            label: {
+              html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+            },
+            id: "address-line-1",
+            name: "address-line-1",
+            autocomplete: "address-line1"
+          }) }}
+
+        {{ govukInput({
+            label: {
+              html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+            },
+            id: "address-line-2",
+            name: "address-line-2",
+            autocomplete: "address-line2"
+          }) }}
+
+        {{ govukInput({
+            label: {
+              text: "Town or city"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-town",
+            name: "address-town",
+            autocomplete: "address-level2"
+          }) }}
+
+        {{ govukInput({
+            label: {
+              text: "County"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "address-county",
+            name: "address-county"
+          }) }}
+
+        {{ govukInput({
+            label: {
+              text: "Postcode"
+            },
+            classes: "govuk-input--width-10",
+            id: "address-postcode",
+            name: "address-postcode",
+            autocomplete: "postal-code"
+          }) }}
+
+        {{ govukInput({
+              label: {
+                text: "Country"
+              },
+             classes: "govuk-input--width-10",
+              id: "address-country",
+              name: "address-country"
+            }) }}
+
+        {{ govukInput({
+              label: {
+                text: "Email address"
+              },
+
+              classes: "govuk-input--width-20",
+              id: "email",
+              name: "email",
+              type: "email",
+              autocomplete: "email",
+              attributes: {
+                spellcheck: "false"
+              }
+            }) }}
 
         {{ govukButton({
            text: "Continue"
