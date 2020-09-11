@@ -11,7 +11,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="applicant-details" method="GET">
+      <form action="sign-in" method="GET">
         <h1 class="govuk-heading-xl">
           {% if serviceName %}
             {{ serviceName }}
@@ -23,7 +23,6 @@
 text: "You cannot ask to remove your company’s registered office address, even if it’s your home address.",
  iconFallbackText: "Warning"
 }) }}
-        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
         {{ govukInsetText({
   text: "It costs £32 to remove your home address from each document. For now, you can only remove your home address from one document at a time using this online service."
