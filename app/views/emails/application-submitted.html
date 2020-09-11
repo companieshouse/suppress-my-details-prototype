@@ -2,49 +2,77 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% set buttonHref = "Your reference number is N4OBD-U2SGP" %}
+      {% set buttonHref = "Your reference number is <br> N4OBD-U2SGP" %}
       {{ govukPanel({
         titleText: "Application submitted",
         html: buttonHref
       }) }}
-      {{ govukTable({
-        rows: [
-          [
-            {
-              text: "Company number"
-            },
-            {
-              text: "0965441"
-            }
-          ],
-          [
-            {
-              text: "Company name"
-            },
-            {
-              text: "TEST LIMITED"
-            }
-          ],
-          [
-            {
-              text: "Document submitted"
-            },
-            {
-              text: "CH01 – Director’s details changed for Mr John Smith on 12 November 2019
-"
-            }
-          ]
-        ]
-      }) }}
+      {% from "govuk/components/table/macro.njk" import govukTable %}
+
+{{ govukTable({
+  caption: "",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "",
+      classes: 'govuk-!-width-one-half'
+    },
+    {
+      text: "",
+      classes: 'govuk-!-width-one-half'
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Company number"
+      },
+      {
+        text: "09164758"
+      }
+    ],
+    [
+      {
+        text: "Company name"
+      },
+      {
+        text: "ABC LTD"
+      }
+    ],
+    [
+      {
+        text: "Document description"
+      },
+      {
+        text: "CH01 – Director’s details changed for Mr John Smith on 12 November 2019"
+      }
+    ],
+    [
+      {
+        text: "Date document added to the register"
+      },
+      {
+        text: "18 November 2019"
+      }
+    ],
+    [
+      {
+        text: "Payment received"
+      },
+      {
+        text: "£32"
+      }
+    ]
+  ]
+}) }}
       <h2 class="govuk-heading-m">What happens next</h2>
-      <p class="govuk-body">An examiner will process the uploaded document to check if it's acceptable for filing. Documents are registered with the date they are uploaded to Companies House as long as they are acceptable.</p>
-      <p class="govuk-body">We'll email you if your document is acceptable for filing. If your document is not acceptable for filing, we'll email you to let you know what to do next.</p>
+      <p class="govuk-body">We will review your application to remove your home address from this document. We’ll email you to let you know if your application was successful. It usually takes around 28 working days to review an application.</p>
       {{ govukWarningText({
-        text: "Warning: Due to the impact of coronavirus (COVID-19), it's taking longer than usual to process documents.",
+        text: "Warning: Due to the impact of coronavirus (COVID-19), it's taking longer than usual to process applications.",
         iconFallbackText: "Warning"
       }) }}
       <h2 class="govuk-heading-m">Contact us</h2>
-      <p class="govuk-body">If you have a question about your submission, you can contact us.</p>
+      <p class="govuk-body">If you have a question about your application, you can contact us.</p>
       <h3 class="govuk-heading-s">Telephone</h3>
       <ul class="govuk-list">
         <li>0303 1234 500</li>
@@ -61,6 +89,8 @@
           <a class="govuk-link" href="https://www.gov.uk/call-charges">enquiries@companieshouse.gov.uk</a>
         </li>
       </ul>
+      <h2 class="govuk-heading-m">Feedback</h2>
+      <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="#" class="govuk-link">quick survey</a>.</p>
     </div>
   </div>
 {% endblock %}
