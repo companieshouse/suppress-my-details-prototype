@@ -7,9 +7,8 @@
         titleText: "Application submitted",
         html: buttonHref
       }) }}
-      {% from "govuk/components/table/macro.njk" import govukTable %}
 
-{{ govukTable({
+      {{ govukTable({
   caption: "",
   firstCellIsHeader: true,
   head: [
@@ -90,7 +89,8 @@
         </li>
       </ul>
       <h2 class="govuk-heading-m">Feedback</h2>
-      <p class="govuk-body">This is a new service. Help us improve it by completing our <a href="#" class="govuk-link">quick survey</a>.</p>
+      <p class="govuk-body">This is a new service. Help us improve it by completing our
+        <a href="https://www.research.net/r/remove-home-add-email-conf" class="govuk-link">quick survey</a>.</p>
     </div>
   </div>
 {% endblock %}
