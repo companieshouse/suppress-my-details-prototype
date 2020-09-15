@@ -21,12 +21,17 @@
 
         {% call govukFieldset({
           legend: {
-            text: "What home address would you like to remove?",
+            text: "What is the home address you want to remove from the document?",
             classes: "govuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
-        <span id="changed-name-hint" class="govuk-hint">You cannot remove a registered office address from the public register, even if it's your home address.</span>
+  <p class="govuk-body">Enter the home address exactly as it is shown on the document on the Companies House register.</p>
+  {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{{ govukInsetText({
+  text: "You cannot remove a registered office address from the public register, even if it's your home address."
+}) }}
         {{ govukInput({
             label: {
               html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'

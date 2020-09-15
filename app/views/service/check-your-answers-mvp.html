@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Check your answers before submitting your application</h1>
+      <h1 class="govuk-heading-l">Check your answers before you continue</h1>
 
       <h2 class="govuk-heading-m">Applicant details</h2>
 
@@ -33,7 +33,7 @@
              },
              {
                key: {
-                 text: "Has the applicant used a different name for business purposes in the last 20 years?"
+                 text: "Has the applicant used a different name on the Companies House register in the last 20 years?"
                },
                value: {
                  text: "No"
@@ -57,7 +57,7 @@
            rows: [
              {
                key: {
-                 text: "What home address would you like to remove?"
+                 text: "What is the home address you want to remove from the document?"
                },
                value: {
                  html: "72 Guild Street<br>London<br>SE23 6FH"
@@ -89,7 +89,7 @@
                 },
                 {
                   key: {
-                    text: "Document description"
+                    text: "Document name and description"
                   },
                   value: {
                     text: "CH01 - Director's details changed for Mr John Smith on 12 November 2019"
@@ -127,14 +127,7 @@
       {{ govukSummaryList({
                        classes: 'govuk-!-margin-bottom-9',
                        rows: [
-                         {
-                           key: {
-                             text: "Email address"
-                           },
-                           value: {
-                             text: "sphillips@gmail.com"
-                           }
-                         },  {
+                        {
                              key: {
                                text: "Contact address"
                              },
@@ -145,16 +138,16 @@
                        ]
                      }) }}
 
-      <h2 class="govuk-heading-m">Submit your application</h2>
+      <h2 class="govuk-heading-m">Confirm authorisation</h2>
 
-      <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you have provided are correct.</p>
+      <p class="govuk-body">By continuing, you confirm that you are authorised to submit this application and to the best of your knowledge, the details you've provided are correct.</p>
 
       <form action="payment-review" method="post" novalidate="novalidate">
 
         <input type="hidden" name="answers-checked" value="true">
 
         {{ govukButton({
-             text: "Confirm and submit"
+             text: "Confirm and continue"
            }) }}
 
       </form>
