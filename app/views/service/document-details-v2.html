@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Document details
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="replacement-address" method="GET">
+
+        <h1 class="govuk-heading-l">
+          Document details
+        </h1>
+
+        {% set textHtml %}
+        {{ govukInput({
+    id: "contact-by-text",
+    name: "contact-by-text",
+    type: "tel",
+    classes: "govuk-!-width-two-thirds",
+    label: {
+      text: "Form title"
+    },
+    hint: {
+      text: "for example, CH01 - Director's details changed for Mr John Smith on 12 November 2019"
+        }
+  }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+    idPrefix: "how-contacted-conditional",
+    name: "how-contacted",
+    fieldset: {
+      legend: {
+        text: "What document would you like to remove your home address from?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+      html: '<p class="govuk-body">You can check which documents contain your home address on the
+        <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.</p>'
+    },
+    items: [
+      {
+        value: "AR01",
+        text: "AR01 - File an annual return"
+      },
+      {
+        value: "NewInc",
+        text: "NewInc - New incorporations"
+      },
+      {
+        value: "288",
+        text: "288 - Appoint a director or secretary"
+      },
+        {
+          value: "text",
+          text: "Other form",
+          conditional: {
+            html: textHtml
+          }
+      }
+
+    ]
+  }) }}
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+                What date was the document was added to the register?
+
+              </legend>
+            </legend>
+            <div id="document-date-hint" class="govuk-hint">
+              For example, 18 11 2019
+            </div>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Where can I find the document date?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                You can find it in the date column of the filing history on the
+                <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.
+              </div>
+            </details>
+            <div class="govuk-date-input" id="document-date">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="document-date-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="document-date-day" name="document-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="document-date-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="document-date-month" name="document-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="document-date-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="document-date-year" name="document-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+           text: "Continue"
+         }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

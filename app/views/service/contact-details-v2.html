@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Applicant's details
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="check-your-answers" method="GET">
+
+        <h1 class="govuk-heading-l">
+          What are your contact details?
+        </h1>
+
+        <p class="govuk-body">We’ll use these to contact you about your application.</p>
+
+        {{ govukRadios({
+  idPrefix: "correspondance-address",
+  name: "correspondance-address",
+  fieldset: {
+    legend: {
+      text: " ",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "70Cardiff",
+      text: "20 Cotton Road, Rumney, Cardiff, Wales, CF3 3EA"
+    },
+    {
+      value: "different",
+      text: "A different address"
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+           text: "Continue"
+         }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Address details
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="document-details-v2" method="GET">
+
+        {% call govukFieldset({
+          legend: {
+            text: "What home address would you like to remove from the document?",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+        <span id="changed-name-hint" class="govuk-hint">You cannot remove a registered office address from the public register, even if it's your home address.</span>
+
+        {{ govukInput({
+  label: {
+    text: "UK postcode"
+  },
+  classes: "govuk-input--width-10",
+  id: "uk-postcode",
+  name: "uk-postcode"
+}) }}
+
+        {{ govukInput({
+  label: {
+    text: "Property name or number"
+  },
+  classes: "govuk-input--width-5",
+  hint: {
+    text: "For example, 'The Mill', '116' or 'Flat 37a'"
+  },
+  id: "uk-postcode",
+  name: "uk-postcode"
+}) }}
+
+        <p>
+          <a href="">Enter your address manually</a>
+        </p>
+        {% endcall %}
+
+        {{ govukButton({
+           text: "Continue"
+         }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
