@@ -12,8 +12,41 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+
+
       <h1 class="govuk-heading-l">Application received:
         <br>Apply to remove your home address from the Companies house register</h1>
+
+        <h2 class="govuk-heading-m">Reference numbers</h2>
+
+        {{ govukSummaryList({
+                         classes: 'govuk-!-margin-bottom-9',
+                         rows: [
+                           {
+                             key: {
+                               text: "Application reference number"
+                             },
+                             value: {
+                               text: "N4OBD-U2SGP"
+                             },
+              actions: {
+                items: [
+                ]
+              }
+                           },  {
+                               key: {
+                                 text: "Payment reference number"
+                               },
+                               value: {
+                                 html: "4Y385E3FC2"
+                               },
+              actions: {
+                items: [
+                ]
+              }
+                             }
+                         ]
+                       }) }}
 
       <h2 class="govuk-heading-m">Applicant details</h2>
 
@@ -59,6 +92,38 @@
            ]
          }) }}
 
+         <h2 class="govuk-heading-m">Contact details</h2>
+
+         {{ govukSummaryList({
+                          classes: 'govuk-!-margin-bottom-9',
+                          rows: [
+
+                            {
+                              key: {
+                                text: "Contact address"
+                              },
+                              value: {
+                                html: "19 Regency Street<br>London<br>SE87 5PT"
+                              },
+               actions: {
+                 items: [
+                 ]
+               }
+                            },  {
+                                key: {
+                                  text: "Email address"
+                                },
+                                value: {
+                                  text: "sphillips@gmail.com"
+                                },
+               actions: {
+                 items: [
+                 ]
+               }
+                              }
+                          ]
+                        }) }}
+
       <h2 class="govuk-heading-m">Home address details</h2>
 
       {{ govukSummaryList({
@@ -79,6 +144,26 @@
              }
            ]
          }) }}
+
+         <h2 class="govuk-heading-m">Replacement address details</h2>
+
+         {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+                      {
+                        key: {
+                          text: "What address do you want to replace your home address with?"
+                        },
+                        value: {
+                          html: "27 Staple Street<br>London<br>SE35 6YP"
+                        },
+               actions: {
+                 items: [
+                 ]
+               }
+                      }
+                    ]
+                  }) }}
 
       <h2 class="govuk-heading-m">Document details</h2>
 
@@ -135,57 +220,6 @@
                 }
               ]
             }) }}
-
-      <h2 class="govuk-heading-m">Replacement address details</h2>
-
-      {{ govukSummaryList({
-                 classes: 'govuk-!-margin-bottom-9',
-                 rows: [
-                   {
-                     key: {
-                       text: "What address do you want to replace your home address with?"
-                     },
-                     value: {
-                       html: "27 Staple Street<br>London<br>SE35 6YP"
-                     },
-            actions: {
-              items: [
-              ]
-            }
-                   }
-                 ]
-               }) }}
-
-      <h2 class="govuk-heading-m">Contact details</h2>
-
-      {{ govukSummaryList({
-                       classes: 'govuk-!-margin-bottom-9',
-                       rows: [
-                         {
-                           key: {
-                             text: "Email address"
-                           },
-                           value: {
-                             text: "sphillips@gmail.com"
-                           },
-            actions: {
-              items: [
-              ]
-            }
-                         },  {
-                             key: {
-                               text: "Contact address"
-                             },
-                             value: {
-                               html: "19 Regency Street<br>London<br>SE87 5PT"
-                             },
-            actions: {
-              items: [
-              ]
-            }
-                           }
-                       ]
-                     }) }}
 
     </form>
 
