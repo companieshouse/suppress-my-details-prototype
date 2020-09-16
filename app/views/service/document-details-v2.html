@@ -29,11 +29,8 @@
     type: "tel",
     classes: "govuk-!-width-two-thirds",
     label: {
-      text: "Form title"
-    },
-    hint: {
-      text: "for example, CH01 - Director's details changed for Mr John Smith on 12 November 2019"
-        }
+      text: "Name and description of document"
+    }
   }) }}
         {% endset -%}
 
@@ -82,7 +79,7 @@
       },
         {
           value: "text",
-          text: "Other form",
+          text: "Other document",
           conditional: {
             html: textHtml
           }
