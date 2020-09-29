@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Sorry, the service is unavailable – Apply to remove your home address from the Companies House register
+{% endblock %}
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Sorry, the service is unavailable.</h1>
+      <p>Try again later.</p>
+      <p>We have not saved your answers. When the service is available you will have to start again.</p>
+      <p>
+        <a href="https://beta.companieshouse.gov.uk/help/contact-us">Contact Companies House</a>
+        if you need to speak to someone about applying to remove your home address from the Companies House register.</p>
+    </div>
+  </div>
+
+{% endblock %}
