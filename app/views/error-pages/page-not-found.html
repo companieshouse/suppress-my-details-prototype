@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Page not found – Apply to remove your home address from the Companies House register - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Page not found</h1>
+      <p>If you typed the web adress, check it is correct.</p>
+      <p>If you pasted the web address, check you copied the entire address.</p>
+      <p>
+        <a href="https://beta.companieshouse.gov.uk/help/contact-us">Contact us</a>
+        if you need to speak to someone about applying to remove your home address from the Companies House register.</p>
+    </div>
+  </div>
+
+{% endblock %}
