@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Service address
+  Address details
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,89 +16,49 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="contact-details-v2" method="GET">
+      <form action="document-details-v2" method="GET">
 
         {% call govukFieldset({
           legend: {
-            text: "What address do you want to replace your home address with?",
+            text: "What is the home address you want to remove from the document?",
             classes: "govuk-fieldset__legend--l",
             isPageHeading: true
           }
-
         }) %}
-        <p class="govuk-body">This will be the company's service address (or ‘correspondence’ address) and is shown on the public register.</p>
-        <p class="govuk-body">You do not need to provide this if:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>the company is dissolved</li>
-          <li>the person whose address you want to remove is no longer acting for the company</li>
-        </ul>
-        {{ govukInput({
-            label: {
-              html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
-            },
-
-            id: "address-line-1",
-            name: "address-line-1",
-            autocomplete: "address-line1"
-          }) }}
+        <span id="changed-name-hint" class="govuk-hint">You cannot remove a registered office address from the public register, even if it's your home address.</span>
 
         {{ govukInput({
-            label: {
-              html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
-            },
-            id: "address-line-2",
-            name: "address-line-2",
-            autocomplete: "address-line2"
-          }) }}
+  label: {
+    text: "UK postcode"
+  },
+  classes: "govuk-input--width-10",
+  id: "uk-postcode",
+  name: "uk-postcode"
+}) }}
 
         {{ govukInput({
-            label: {
-              text: "Town or city"
-            },
-            classes: "govuk-!-width-two-thirds",
-            id: "address-town",
-            name: "address-town",
-            autocomplete: "address-level2"
-          }) }}
+  label: {
+    text: "Property name or number"
+  },
+  classes: "govuk-input--width-5",
+  hint: {
+    text: "For example, 'The Mill', '116' or 'Flat 37a'"
+  },
+  id: "uk-postcode",
+  name: "uk-postcode"
+}) }}
 
-        {{ govukInput({
-            label: {
-              text: "County"
-            },
-            classes: "govuk-!-width-two-thirds",
-            id: "address-county",
-            name: "address-county"
-          }) }}
-
-        {{ govukInput({
-            label: {
-              text: "Postcode"
-            },
-            classes: "govuk-input--width-10",
-            id: "address-postcode",
-            name: "address-postcode",
-            autocomplete: "postal-code"
-          }) }}
-
-        {{ govukInput({
-                label: {
-                  text: "Country"
-                },
-                classes: "govuk-input--width-10",
-                id: "address-country",
-                name: "address-country"
-              }) }}
-
+        <p>
+          <a href="">Enter your address manually</a>
+        </p>
         {% endcall %}
 
-      </fieldset>
-
-      {{ govukButton({
+        {{ govukButton({
            text: "Continue"
          }) }}
-    </form>
+      </form>
 
+    </div>
   </div>
-</div>
 
 {% endblock %}

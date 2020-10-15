@@ -16,84 +16,35 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="check-your-answers-mvp" method="GET">
+      <form action="check-your-answers" method="GET">
 
         <h1 class="govuk-heading-l">
           What are your contact details?
         </h1>
 
-        <p class="govuk-body">We’ll use these to contact you about your application.</p>
+        <p class="govuk-body">We’ll only use this address if we need to contact you by post about your application.</p>
 
-        {{ govukInput({
-            label: {
-              html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
-            },
-            id: "address-line-1",
-            name: "address-line-1",
-            autocomplete: "address-line1"
-          }) }}
-
-        {{ govukInput({
-            label: {
-              html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
-            },
-            id: "address-line-2",
-            name: "address-line-2",
-            autocomplete: "address-line2"
-          }) }}
-
-        {{ govukInput({
-            label: {
-              text: "Town or city"
-            },
-            classes: "govuk-!-width-two-thirds",
-            id: "address-town",
-            name: "address-town",
-            autocomplete: "address-level2"
-          }) }}
-
-        {{ govukInput({
-            label: {
-              text: "County"
-            },
-            classes: "govuk-!-width-two-thirds",
-            id: "address-county",
-            name: "address-county"
-          }) }}
-
-        {{ govukInput({
-            label: {
-              text: "Postcode"
-            },
-            classes: "govuk-input--width-10",
-            id: "address-postcode",
-            name: "address-postcode",
-            autocomplete: "postal-code"
-          }) }}
-
-        {{ govukInput({
-              label: {
-                text: "Country"
-              },
-             classes: "govuk-input--width-10",
-              id: "address-country",
-              name: "address-country"
-            }) }}
-
-        {{ govukInput({
-              label: {
-                text: "Email address"
-              },
-
-              classes: "govuk-input--width-20",
-              id: "email",
-              name: "email",
-              type: "email",
-              autocomplete: "email",
-              attributes: {
-                spellcheck: "false"
-              }
-            }) }}
+        {{ govukRadios({
+  idPrefix: "correspondance-address",
+  name: "correspondance-address",
+  fieldset: {
+    legend: {
+      text: " ",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "70Cardiff",
+      text: "20 Cotton Road, Rumney, Cardiff, Wales, CF3 3EA"
+    },
+    {
+      value: "different",
+      text: "A different address"
+    }
+  ]
+}) }}
 
         {{ govukButton({
            text: "Continue"
