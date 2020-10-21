@@ -13,7 +13,6 @@
       <h2 class="govuk-heading-m">Apply to remove your home address from the Companies House register (Prototype - v5)
       </h2>
       <ul class="govuk-list govuk-list--bullet">
-
         <li>
           <a href="/service/start">Start</a>
         </li>
@@ -21,63 +20,69 @@
           <a href="/service/sign-in">Sign in</a>
         </li>
         <li>
-          <a href="/service/company-details">What are the applicant's details?</a>
+          <a href="/service/applicant-details">What are the applicant's details?</a>
         </li>
         <li>
-          <a href="/service/applicant-details">What are the company details? (new)</a>
+          <a href="/service/company-details">What are the company details? (new)</a>
         </li>
         <li>
-          <a href="/service/applicant-details">Confirm the company details (new)</a>
-        </li>
-
-        <li>
-          <a href="/service/address-to-remove-v2">What home address would you like to remove from the document?(new)</a>
+          <a href="">Confirm the company details (new)</a>
         </li>
         <li>
-          <a href="/service/document-details-v2">What are the document details?(new)</a>
+          <a href="/service/home-address">What home address would you like to remove from the document?(new)</a>
         </li>
         <li>
-          <a href="/service/company-disolved">Is the company dissolved or closed?</a>
-        <li>
-          <a href="/service/applicant-acting">Is the applicant currently acting for the company? (new)</a>
+          <a href="/service/document-details">What are the document details?(new)</a>
         </li>
         <li>
-          <a href="/service/replacement-address">What address do you want to replace your home address with?</a>
+          <a href="/service/company-dissolved">Is the company dissolved or closed? (new)</a>
         </li>
-        <li>
-          <a href="/service/contact-details-v2">Contact details (new)</a>
-        </li>
-        <li>
-          <a href="/service/check-your-answers">Check your answers</a>
-        </li>
-        <li>
-          <a href="/service/payment-review">Payment review</a>
-        </li>
-        <li>
-          <a href="https://www.payments.service.gov.uk/card_details/6s8orfu6mmdn8a74ljspthe57i">GovPay service</a>
-        </li>
-        <li>
-          <a href="/service/confirmation">Confirmation page</a>
-        </li>
+        <ul>
+          <li>
+            <a href="/service/applicant-acting">Is the applicant currently acting for the company? (new)</a>
+          </li>
+          <ul>
+            <li>
+              <a href="/service/replacement-address">What address do you want to replace your home address with?</a>
+            </li>
+            <li>
+              <a href="/service/confirm-replacement-address">Confirm replacement address (new)</a>
+              <p>In dev, this would be part of the above page</p>
+            </li>
+          </ul>
       </ul>
+      <li>
+        <a href="/service/contact-details">Contact details (new)</a>
+      </li>
+      <li>
+        <a href="/service/check-your-answers">Check your answers</a>
+      </li>
+      <li>
+        <a href="/service/payment-review">Payment review</a>
+      </li>
+      <li>
+        <a href="https://www.payments.service.gov.uk/card_details/6s8orfu6mmdn8a74ljspthe57i">GovPay service</a>
+      </li>
+      <li>
+        <a href="/service/confirmation">Confirmation page</a>
+      </li>
+    </ul>
+    <h2 class="govuk-heading-m">Emails
+    </h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a href="/emails/application-received">Application received (sent to suppressions team)</a>
+      </li>
+      <li>
+        <a href="/emails/application-submitted">Application submitted (sent to user)</a>
+      </li>
+    </ul>
 
-      <h2 class="govuk-heading-m">Emails
-      </h2>
-      <ul class="govuk-list govuk-list--bullet">
+    <p>
+      <a href="/public/images/user-journey-v5.png">Overview of the user journey</a>
+    </p>
 
-        <li>
-          <a href="/emails/application-received">Application received (sent to suppressions team)</a>
-        </li>
-        <li>
-          <a href="/emails/application-submitted">Application submitted (sent to user)</a>
-        </li>
-      </ul>
-
-      <p>
-        <a href="/public/images/user-journey-v5.png">Overview of the user journey</a>
-      </p>
-
-    </div>
   </div>
+</div>
 
 {% endblock %}
