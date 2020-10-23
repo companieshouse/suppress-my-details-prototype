@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Confirm this is the correct company
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase-banner.html" %}
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+      <form action="document-details" method="GET">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-heading-l">Confirm this is the correct company</h1>
+
+            {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Company name"
+      },
+      value: {
+        text: "THE GIRLS' DAY SCHOOL TRUST"
+      }
+    },
+    {
+      key: {
+        text: "Company number"
+      },
+      value: {
+        text: "00006400"
+      }
+    },
+    {
+      key: {
+        text: "Status"
+      },
+      value: {
+        text: "Active"
+      }
+    },
+    {
+      key: {
+        text: "Incorporation date"
+      },
+      value: {
+        text: "26 June 2002"
+      }
+    }
+  ]
+}) }}
+
+            {{ govukButton({
+                text: "Confirm and continue"
+              }) }}
+          </form>
+
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

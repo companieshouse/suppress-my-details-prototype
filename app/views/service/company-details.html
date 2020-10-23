@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  What are the company details?
+  What is the company number?
 {% endblock %}
 {% block main %}
 
@@ -16,11 +16,15 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="company-dissolved" method="post">
+          <form action="confirm-company-details" method="post">
 
             {% call govukFieldset({
+              attributes : {
+                'data-required': "data-required",
+                'data-error': "Enter the company number"
+                },
               legend: {
-                text: "What are the company details?",
+                text: "What is the company number?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
                 }
@@ -28,36 +32,28 @@
 
             {{ govukInput({
                 label: {
-                  text: "Company number"
+                  text: "What is the company name?",
+                  classes: "govuk-visually-hidden"
                 },
                 hint: {
                   text: "This is the 8-character reference issued by Companies House when the company was set up."
                 },
                 classes: "govuk-input--width-10",
-                id: "company-number",
-                name: "company-number"
+                id: "company-name",
+                name: "company-name"
               }) }}
-
-            {{ govukInput({
-                  label: {
-                    text: "Company name"
-                  },
-                  classes: "govuk-input--company-name",
-                  id: "company-name",
-                  name: "company-name"
-                }) }}
 
             {% endcall %}
 
             <details class="govuk-details">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                  Help with company details
+                  Help with company number
                 </span>
               </summary>
               <div class="govuk-details__text">
                 Use the
-                <a href="https://beta.companieshouse.gov.uk/" target="_blank">Companies House service (opens in a new tab)</a>
+                <a href="https://beta.companieshouse.gov.uk/" target="_blank">Companies House service (opens in a new window or tab)</a>
                 to find company details.
               </div>
             </details>
