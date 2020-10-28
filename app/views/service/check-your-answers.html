@@ -17,65 +17,89 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">Check your answers before you continue</h1>
-
-      <h2 class="govuk-heading-m">Applicant details</h2>
+      <h2 class="govuk-heading-m">Company details</h2>
 
       {{ govukSummaryList({
-           classes: 'govuk-!-margin-bottom-9',
-           rows: [
-             {
-               key: {
-                 text: "Full name"
-               },
-               value: {
-                 text: "Sarah Phillips"
-               },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-             },
-             {
-               key: {
-                 text: "Has the applicant used a different name on the Companies House register in the last 20 years?"
-               },
-               value: {
-                 text: "No"
-               },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-             },
-             {
-               key: {
-                 text: "Date of birth"
-               },
-               value: {
-                 text: "5 January 1978"
-               },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
+               classes: 'govuk-!-margin-bottom-9',
+               rows: [
+                 {
+                   key: {
+                     text: "Company name"
+                   },
+                   value: {
+                     text: "ABC LTD"
+                   },
+             actions: {
+               items: [
+                 {
+                   href: "#",
+                   text: "Change",
+                   visuallyHiddenText: "name"
+                 }
+               ]
              }
-           ]
-         }) }}
+                 },
+                 {
+                   key: {
+                     text: "Company number"
+                   },
+                   value: {
+                     text: "09164758"
+                   },
+             actions: {
+               items: [
+                 {
+                   href: "#",
+                   text: "Change",
+                   visuallyHiddenText: "name"
+                 }
+                 ]
+               }
+                }
+              ]
+            }) }}
+      <h2 class="govuk-heading-m">Document details</h2>
+
+      {{ govukSummaryList({
+               classes: 'govuk-!-margin-bottom-9',
+               rows: [
+
+                 {
+                   key: {
+                     text: "Document name and description"
+                   },
+                   value: {
+                     text: "CH01 - Director's details changed for Mr John Smith on 12 November 2019"
+                   },
+             actions: {
+               items: [
+                 {
+                   href: "#",
+                   text: "Change",
+                   visuallyHiddenText: "name"
+                 }
+               ]
+             }
+                 },
+                 {
+                   key: {
+                     text: "Document date"
+                   },
+                   value: {
+                     text: "5 December 2019"
+                   },
+             actions: {
+               items: [
+                 {
+                   href: "#",
+                   text: "Change",
+                   visuallyHiddenText: "name"
+                 }
+               ]
+             }
+                 }
+               ]
+             }) }}
 
       <h2 class="govuk-heading-m">Home address details</h2>
 
@@ -102,83 +126,48 @@
              }
            ]
          }) }}
-
-      <h2 class="govuk-heading-m">Document details</h2>
+      <h2 class="govuk-heading-m">Company activity(?)</h2>
 
       {{ govukSummaryList({
-              classes: 'govuk-!-margin-bottom-9',
-              rows: [
-                {
-                  key: {
-                    text: "Company name"
-                  },
-                  value: {
-                    text: "ABC LTD"
-                  },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-                },
-                {
-                  key: {
-                    text: "Company number"
-                  },
-                  value: {
-                    text: "09164758"
-                  },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-                },
-                {
-                  key: {
-                    text: "Document name and description"
-                  },
-                  value: {
-                    text: "CH01 - Director's details changed for Mr John Smith on 12 November 2019"
-                  },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-                },
-                {
-                  key: {
-                    text: "Document date"
-                  },
-                  value: {
-                    text: "5 December 2019"
-                  },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-                }
-              ]
-            }) }}
+                  classes: 'govuk-!-margin-bottom-9',
+                  rows: [
 
+                    {
+                      key: {
+                        text: "Is the company dissolved or closed?"
+                      },
+                      value: {
+                        text: "No"
+                      },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "name"
+                    }
+                  ]
+                }
+                    },
+                    {
+                      key: {
+                        text: "Is the applicant currently acting for the company?"
+                      },
+                      value: {
+                        text: "Yes"
+                      },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "name"
+                    }
+                  ]
+                }
+                    }
+                  ]
+                }) }}
       <h2 class="govuk-heading-m">Replacement address details</h2>
 
       {{ govukSummaryList({
@@ -203,6 +192,64 @@
                    }
                  ]
                }) }}
+      <h2 class="govuk-heading-m">Applicant details</h2>
+
+      {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+                      {
+                        key: {
+                          text: "Full name"
+                        },
+                        value: {
+                          text: "Sarah Phillips"
+                        },
+                     actions: {
+                       items: [
+                         {
+                           href: "#",
+                           text: "Change",
+                           visuallyHiddenText: "name"
+                         }
+                       ]
+                     }
+                      },
+                      {
+                        key: {
+                          text: "Has the applicant used a different name on the Companies House register in the last 20 years?"
+                        },
+                        value: {
+                          text: "No"
+                        },
+                     actions: {
+                       items: [
+                         {
+                           href: "#",
+                           text: "Change",
+                           visuallyHiddenText: "name"
+                         }
+                       ]
+                     }
+                      },
+                      {
+                        key: {
+                          text: "Date of birth"
+                        },
+                        value: {
+                          text: "5 January 1978"
+                        },
+                     actions: {
+                       items: [
+                         {
+                           href: "#",
+                           text: "Change",
+                           visuallyHiddenText: "name"
+                         }
+                       ]
+                     }
+                      }
+                    ]
+                  }) }}
 
       <h2 class="govuk-heading-m">Contact details</h2>
 
