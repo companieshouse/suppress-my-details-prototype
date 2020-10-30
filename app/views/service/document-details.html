@@ -19,7 +19,7 @@
       <form action="home-address" method="GET">
 
         <h1 class="govuk-heading-l">
-          Which document would you like to remove your home address from?
+          Which document do you want to remove your home address from?
         </h1>
 
         {% set textHtml %}
@@ -29,7 +29,7 @@
     type: "tel",
     classes: "govuk-!-width-two-thirds",
     label: {
-      text: "Name and description of document"
+      text: "Type and description of document"
     }
   }) }}
         {% endset -%}
@@ -46,24 +46,23 @@
     },
     hint: {
       html: '<p class="govuk-body">You can check which documents contain your home address on the
-        <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.</p>'
+        <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.<br><br>
+      The document type and description are shown at the top of the document or in the filing history on the Companies House register.</p>'
+
     },
+
     items: [
     {
       value: "AP01",
       text: "AP01 - Appoint a director"
     },
+    {
+      value: "CH01",
+      text: "CH01 - Change of director's details"
+    },
       {
         value: "AR01",
-        text: "AR01 - File an annual return"
-      },
-      {
-        value: "CH01",
-        text: "CH01 - Change of director's details"
-      },
-      {
-        value: "288a",
-        text: "288a - Appoint a director or secretary"
+        text: "AR01 - Annual return"
       },
       {
         value: "363a",
@@ -72,6 +71,10 @@
       {
         value: "363s",
         text: "363s - Annual return"
+      },
+      {
+        value: "288a",
+        text: "288a - Appoint a director or secretary"
       },
       {
         value: "NewInc",

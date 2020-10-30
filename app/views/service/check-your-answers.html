@@ -66,7 +66,7 @@
 
                  {
                    key: {
-                     text: "Document name and description"
+                     text: "Document type and description"
                    },
                    value: {
                      text: "CH01 - Director's details changed for Mr John Smith on 12 November 2019"
@@ -126,7 +126,7 @@
              }
            ]
          }) }}
-      <h2 class="govuk-heading-m">Company activity(?)</h2>
+      <h2 class="govuk-heading-m">Company and officer status</h2>
 
       {{ govukSummaryList({
                   classes: 'govuk-!-margin-bottom-9',
@@ -134,10 +134,10 @@
 
                     {
                       key: {
-                        text: "Is the company dissolved or closed?"
+                        text: "Is the company live?"
                       },
                       value: {
-                        text: "No"
+                        text: "Yes"
                       },
                 actions: {
                   items: [
@@ -151,7 +151,7 @@
                     },
                     {
                       key: {
-                        text: "Is the applicant currently acting for the company?"
+                        text: "Is the applicant still acting for the company?"
                       },
                       value: {
                         text: "Yes"
@@ -175,7 +175,7 @@
                  rows: [
                    {
                      key: {
-                       text: "What address do you want to replace your home address with?"
+                       text: "What address do you want to replace the home address with?"
                      },
                      value: {
                        html: "27 Staple Street<br>London<br>SE35 6YP"
