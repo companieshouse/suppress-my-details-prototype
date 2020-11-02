@@ -24,27 +24,30 @@
 
         <p class="govuk-body">We’ll only use this address if we need to contact you by post about your application.</p>
 
-        {{ govukRadios({
-  idPrefix: "correspondance-address",
-  name: "correspondance-address",
-  fieldset: {
-    legend: {
-      text: " ",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--l"
-    }
+        {{ govukInput({
+  label: {
+    text: "UK postcode"
   },
-  items: [
-    {
-      value: "70Cardiff",
-      text: "20 Cotton Road, Rumney, Cardiff, Wales, CF3 3EA"
-    },
-    {
-      value: "different",
-      text: "A different address"
-    }
-  ]
+  classes: "govuk-input--width-10",
+  id: "uk-postcode",
+  name: "uk-postcode"
 }) }}
+
+        {{ govukInput({
+  label: {
+    text: "Property name or number"
+  },
+  classes: "govuk-input--width-5",
+  hint: {
+    text: "For example, 'The Mill', '116' or 'Flat 37a'"
+  },
+  id: "uk-postcode",
+  name: "uk-postcode"
+}) }}
+
+        <p>
+          <a href="">Enter your address manually</a>
+        </p>
 
         {{ govukButton({
            text: "Continue"
