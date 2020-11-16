@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  What are the company details?
+  Is the applicant still acting for the company?
 {% endblock %}
 {% block main %}
 
@@ -17,8 +17,6 @@
         <div class="govuk-grid-column-two-thirds">
 
           <form action="replacement-address" method="post">
-
-            {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
             {{ govukRadios({
               classes: "govuk-radios--inline",
@@ -42,7 +40,6 @@
                 }
               ]
             }) }}
-
 
             {{ govukButton({
         text: "Continue"
