@@ -24,30 +24,16 @@
 
         <span id="changed-name-hint" class="govuk-hint">Tell us the details of the person who wants to remove their home address from the Companies House public register.</span>
 
-        {% call govukFieldset({
-                 attributes : {
-                   'data-required': "data-required",
-                   'data-error': "Enter full name"
-                   },
-                 legend: {
-                   text: "Full name",
-                   isPageHeading: false,
-                   classes: "govuk-label"
-                   }
-                 }) %}
-
-        {{ govukInput({
-                   label: {
-                     text: "full name",
-                     classes: "govuk-visually-hidden"
-                   },
-
-                   classes: "govuk-input--width-20",
-                   id: "full-name",
-                   name: "full-name"
-                 }) }}
-
-        {% endcall %}
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" data-required="data-required" data-error="Enter the applicant's full name">
+            <legend>
+              <label class="govuk-label" for="full-name">
+                Full name
+              </label>
+            </legend>
+            <input class="govuk-input govuk-!-width-two-thirds" id="full-name" name="full-name" type="text">
+          </fieldset>
+        </div>
 
         {% set previousNamesHtml %}
         {{ govukInput({
