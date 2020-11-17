@@ -15,7 +15,7 @@
   <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% include 'includes/error.html' %}
+
       <form action="address-details" method="GET">
 
         <h1 class="govuk-heading-l">
@@ -24,16 +24,18 @@
 
         <span id="changed-name-hint" class="govuk-hint">Tell us the details of the person who wants to remove their home address from the Companies House public register.</span>
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" data-required="data-required" data-error="Enter the applicant's full name">
-            <legend>
-              <label class="govuk-label" for="full-name">
-                Full name
-              </label>
-            </legend>
-            <input class="govuk-input govuk-!-width-two-thirds" id="full-name" name="full-name" type="text">
-          </fieldset>
-        </div>
+        {{ govukInput({
+          label: {
+            text: "Full name"
+          },
+          classes: "govuk-input--width-20",
+          id: "full-name",
+          name: "full-name",
+          autocomplete: "name",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
 
         {% set previousNamesHtml %}
         {{ govukInput({
@@ -56,7 +58,6 @@
               classes: "govuk-fieldset__legend"
             }
           },
-
           items: [
             {
               value: "yes",
