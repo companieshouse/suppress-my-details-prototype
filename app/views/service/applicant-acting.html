@@ -16,34 +16,36 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-          <form action="replacement-address" method="post">
+          <form action="applicant-acting-answer" method="post" class="form">
 
-            {{ govukRadios({
-              classes: "govuk-radios--inline",
-              idPrefix: "changed-name",
-              name: "changed-name",
-              fieldset: {
-                legend: {
-                  text: "Is the applicant still acting for the company?",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--l"
-                }
-              },
-              items: [
-                {
-                  value: "yes",
-                  text: "Yes"
-                },
-                {
-                  value: "no",
-                  text: "No"
-                }
-              ]
-            }) }}
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
-            {{ govukButton({
-        text: "Continue"
-      }) }}
+                  <h1 class="govuk-fieldset__heading">
+                    Is the applicant still acting for the company?
+                  </h1>
+
+                </legend>
+
+                <div class="govuk-radios govuk-radios--inline">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="applicant-acting-yes" name="applicant-acting" type="radio" value="true">
+                    <label class="govuk-label govuk-radios__label" for="applicant-acting-yes">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="applicant-acting-no" name="applicant-acting" type="radio" value="false">
+                    <label class="govuk-label govuk-radios__label" for="applicant-acting-no">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">Continue</button>
           </form>
 
         </div>
