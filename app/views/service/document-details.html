@@ -50,7 +50,7 @@
       The document type and description are shown at the top of the document or in the filing history on the Companies House register.</p>
 
       <p class="govuk-body">
-        <a href="https://www.gov.uk/government/publications/apply-to-remove-your-home-address-from-the-public-register-sr01/list-of-documents" class="govuk-link">You can only apply to remove your home address from the following documents.</a>
+
       </p>'
 
     },
@@ -94,6 +94,13 @@
 
     ]
   }) }}
+  {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+  <div class="govuk-inset-text">
+    You can only apply to remove your home address from certain documents. Check the
+      <a href="https://www.gov.uk/government/publications/apply-to-remove-your-home-address-from-the-public-register-sr01/list-of-documents" class="govuk-link" rel="noreferrer noopener" target="_blank">list of documents you can apply to remove your home address from (opens in a new tab)</a>.
+  </div>
+
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
