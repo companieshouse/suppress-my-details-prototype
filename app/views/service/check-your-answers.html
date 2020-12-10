@@ -21,7 +21,9 @@
 
       {{ govukSummaryList({
                classes: 'govuk-!-margin-bottom-9',
+
                rows: [
+
                  {
                    key: {
                      text: "Company name"
@@ -69,7 +71,7 @@
                      text: "Document type and description"
                    },
                    value: {
-                     text: "CH01 - Director's details changed for Mr John Smith on 12 November 2019"
+                     text: "AP01 - Appoint a director"
                    },
              actions: {
                items: [
@@ -126,32 +128,16 @@
              }
            ]
          }) }}
-      <h2 class="govuk-heading-m">Company and applicant status</h2>
+      <h2 class="govuk-heading-m">Applicant status</h2>
 
       {{ govukSummaryList({
                   classes: 'govuk-!-margin-bottom-9',
                   rows: [
 
+
                     {
                       key: {
-                        text: "Is the company live?"
-                      },
-                      value: {
-                        text: "Yes"
-                      },
-                actions: {
-                  items: [
-                    {
-                      href: "#",
-                      text: "Change",
-                      visuallyHiddenText: "name"
-                    }
-                  ]
-                }
-                    },
-                    {
-                      key: {
-                        text: "Is the applicant still acting for the company?"
+                        text: "Is the applicant a current officer of the company?"
                       },
                       value: {
                         text: "No"

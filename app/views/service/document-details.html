@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Which document do you want to remove your home address from? - Apply to remove your home address from the Companies House register - GOV.UK
+  What are the document details? - Apply to remove your home address from the Companies House register - GOV.UK
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,7 +19,7 @@
       <form action="home-address" method="GET">
 
         <h1 class="govuk-heading-l">
-          Which document do you want to remove your home address from?
+          Document details
         </h1>
 
         {% set textHtml %}
@@ -50,7 +50,11 @@
       The document type and description are shown at the top of the document or in the filing history on the Companies House register.</p>
 
       <p class="govuk-body">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
 
+          Which document do you want to remove your home address from?
+
+        </legend>
       </p>'
 
     },
