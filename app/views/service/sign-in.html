@@ -4,6 +4,10 @@
   Sign in to Companies House - Apply to remove your home address from the Companies House register - GOV.UK
 {% endblock %}
 
+<!--service names are not currently shown on CH sign in or company authenticate-->
+{% set serviceName %}
+{% endset%}
+
 {% block beforeContent %}
   {% include "includes/phase-banner.html" %}
 
@@ -21,7 +25,7 @@
         <h1 class="govuk-heading-l">
           Sign in to Companies House
         </h1>
-<p class="govuk-body">You cannot use your WebFiling details to sign in. You must sign in to or register a Companies House account.</p>
+        <p class="govuk-body">You cannot use your WebFiling details to sign in. You must sign in to or register a Companies House account.</p>
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" data-required="data-required" data-error="Enter your email address">
             <legend>
