@@ -92,4 +92,28 @@ router.post('/service/document-details', function (req, res) {
   }
 })
 
+// contact-details
+
+router.post('/service/contact-address', function (req, res) {
+  var errors = []
+  var postcodeHasError = false
+
+  if (req.session.data['uk-postcode'] === '') {
+    postcodeHasError = true
+    errors.push({
+      text: 'Enter a postcode',
+      href: '#uk-postcode'
+    })
+  }
+
+  if (postcodeHasError) {
+    res.render('service/contact-address', {
+      errorPostcode: postcodeHasError,
+      errorList: errors
+    })
+  } else {
+    res.redirect('/service/check-your-answers')
+  }
+})
+
 module.exports = router
