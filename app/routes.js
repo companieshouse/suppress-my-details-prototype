@@ -28,18 +28,43 @@ router.post('/service/applicant-acting-answer', function (req, res) {
 
 router.post('/service/applicant-details', function (req, res) {
   var errors = []
-  var str = req.session.data['full-name']
-  if (str === '') {
+  var nameHasError = false
+  var changednameHasError = false
+  var dobHasError = false
+
+  if (req.session.data['full-name'] === '') {
+    nameHasError = true
     errors.push({
       text: 'Enter full name',
       href: '#full-name'
     })
+  }
+
+  if (typeof req.session.data['changed-name'] === 'undefined') {
+    changednameHasError = true
+    errors.push({
+      text: 'Enter changed name',
+      href: '#changed-name'
+    })
+  }
+
+  if (req.session.data['dob-year'] === '') {
+    dobHasError = true
+    errors.push({
+      text: 'Date of birth must include a year',
+      href: '#year'
+    })
+  }
+
+  if (nameHasError || changednameHasError || dobHasError) {
     res.render('service/applicant-details', {
-      errorName: true,
+      errorName: nameHasError,
+      errorPreviousname: changednameHasError,
+      errorDob: dobHasError,
       errorList: errors
     })
   } else {
-    res.redirect('document-details')
+    res.redirect('/document-description')
   }
 })
 
