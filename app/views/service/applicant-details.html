@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="document-details" method="GET">
+      <form action="/service/applicant-details" method="post">
 
         <h1 class="govuk-heading-l">
           What are the applicant's details?
@@ -24,18 +24,32 @@
 
         <span id="changed-name-hint" class="govuk-hint">Tell us the details of the person who wants to remove their home address from the Companies House public register.</span>
 
-        {{ govukInput({
-          label: {
-            text: "Full name"
-          },
-          classes: "govuk-input--width-20",
-          id: "full-name",
-          name: "full-name",
-          autocomplete: "name",
-          attributes: {
-            spellcheck: "false"
-          }
-        }) }}
+        {% if errorName == true %}
+          {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: errorList
+            }) }}
+          {{ govukInput({
+              label: {
+                text: "Full name"
+              },
+              classes: "govuk-input--width-20",
+              id: "full-name",
+              name: "full-name",
+              errorMessage: {
+                text: "Enter full name"
+              }
+            }) }}
+        {% else %}
+          {{ govukInput({
+              label: {
+                text: "Full name"
+              },
+              classes: "govuk-input--width-20",
+              id: "full-name",
+              name: "full-name"
+            }) }}
+        {% endif %}
 
         {% set previousNamesHtml %}
         {{ govukInput({
