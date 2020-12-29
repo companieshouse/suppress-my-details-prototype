@@ -64,7 +64,31 @@ router.post('/service/applicant-details', function (req, res) {
       errorList: errors
     })
   } else {
-    res.redirect('/document-description')
+    res.redirect('document-details')
+  }
+})
+
+// Document-details
+
+router.post('/service/document-details', function (req, res) {
+  var errors = []
+  var descriptionHasError = false
+
+  if (typeof req.session.data['document'] === 'undefined') {
+    descriptionHasError = true
+    errors.push({
+      text: 'Select a description',
+      href: '#document'
+    })
+  }
+
+  if (descriptionHasError) {
+    res.render('service/document-details', {
+      errorDocument: descriptionHasError,
+      errorList: errors
+    })
+  } else {
+    res.redirect('/service/home-address')
   }
 })
 
