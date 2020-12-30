@@ -15,36 +15,63 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-
-          <form action="applicant-acting-answer" method="post" class="form">
-
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-
-                  <h1 class="govuk-fieldset__heading">
-                    Is the applicant a current officer of the company?
-                  </h1>
-
-                </legend>
-
-                <div class="govuk-radios govuk-radios--inline">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="applicant-acting-yes" name="applicant-acting" type="radio" value="true">
-                    <label class="govuk-label govuk-radios__label" for="applicant-acting-yes">
-                      Yes
-                    </label>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="applicant-acting-no" name="applicant-acting" type="radio" value="false">
-                    <label class="govuk-label govuk-radios__label" for="applicant-acting-no">
-                      No
-                    </label>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
-
+          {% if errorCurrentofficer == true %}
+            {{ govukErrorSummary({
+                   titleText: "There is a problem",
+                   errorList: errorList
+                 }) }}
+          {% endif %}
+          <form action="/service/applicant-acting" method="post">
+            {% if errorCurrentofficer == true %}
+              {{ govukRadios({
+              classes: "govuk-radios--inline",
+              idPrefix: "current-officer",
+              name: "current-officer",
+              fieldset: {
+                legend: {
+                  text: "Is the applicant a current officer of the company?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              errorMessage: {
+                text: "Select if the applicant is a current officer"
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes"
+                },
+                {
+                  value: "no",
+                  text: "No"
+                }
+              ]
+            }) }}
+            {% else %}
+              {{ govukRadios({
+              classes: "govuk-radios--inline",
+              idPrefix: "current-officer",
+              name: "current-officer",
+              fieldset: {
+                legend: {
+                  text: "Is the applicant a current officer of the company?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes"
+                },
+                {
+                  value: "no",
+                  text: "No"
+                }
+              ]
+            }) }}
+            {% endif %}
             <button class="govuk-button" data-module="govuk-button">Continue</button>
           </form>
 

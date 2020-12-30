@@ -9,21 +9,6 @@ router.get('/', function (req, res) {
   })
 })
 
-// Branching
-router.post('/service/applicant-acting-answer', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
-
-  const applicantacting = req.session.data['applicant-acting']
-
-  if (applicantacting === 'false') {
-    res.redirect('contact-address')
-  } else {
-    res.redirect('replacement-address')
-  }
-})
-
 // Applicant-details
 
 router.post('/service/applicant-details', function (req, res) {
@@ -89,6 +74,34 @@ router.post('/service/document-details', function (req, res) {
     })
   } else {
     res.redirect('/service/home-address')
+  }
+})
+
+// current-officer-details
+
+router.post('/service/applicant-acting', function (req, res) {
+  var errors = []
+  var currentofficerHasError = false
+
+  if (typeof req.session.data['current-officer'] === 'undefined') {
+    currentofficerHasError = true
+    errors.push({
+      text: 'Select if the applicant is a current officer',
+      href: '#current-officer'
+    })
+  }
+
+  if (currentofficerHasError) {
+    res.render('service/applicant-acting', {
+      errorCurrentofficer: currentofficerHasError,
+      errorList: errors
+    })
+    // Branching based on answer
+  } else {
+    if (req.session.data['current-officer'] === 'no') {
+      res.redirect('contact-address')
+    }
+    res.redirect('replacement-address')
   }
 })
 

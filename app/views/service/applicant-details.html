@@ -17,6 +17,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form action="/service/applicant-details" method="post">
+
         {% if errorName == true or errorPreviousname == true %}
           {{ govukErrorSummary({
                  titleText: "There is a problem",
