@@ -9,6 +9,29 @@ router.get('/', function (req, res) {
   })
 })
 
+// company-number
+router.post('/service/company-details', function (req, res) {
+  var errors = []
+  var numberHasError = false
+
+  if (req.session.data['company-number'] === '') {
+    numberHasError = true
+    errors.push({
+      text: 'Enter a company number',
+      href: '#company-number'
+    })
+  }
+
+  if (numberHasError) {
+    res.render('service/company-details', {
+      errorNumber: numberHasError,
+      errorList: errors
+    })
+  } else {
+    res.redirect('/service/confirm-company-details')
+  }
+})
+
 // Applicant-details
 
 router.post('/service/applicant-details', function (req, res) {
@@ -28,7 +51,7 @@ router.post('/service/applicant-details', function (req, res) {
   if (typeof req.session.data['changed-name'] === 'undefined') {
     changednameHasError = true
     errors.push({
-      text: 'Enter changed name',
+      text: 'Select if name has changed',
       href: '#changed-name'
     })
   }
