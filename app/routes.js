@@ -152,6 +152,30 @@ router.post('/service/home-address', function (req, res) {
   }
 })
 
+// replacement-address-details
+
+router.post('/service/replacement-address', function (req, res) {
+  var errors = []
+  var postcodeHasError = false
+
+  if (req.session.data['uk-postcode'] === '') {
+    postcodeHasError = true
+    errors.push({
+      text: 'Enter a postcode',
+      href: '#uk-postcode'
+    })
+  }
+
+  if (postcodeHasError) {
+    res.render('service/replacement-address', {
+      errorPostcode: postcodeHasError,
+      errorList: errors
+    })
+  } else {
+    res.redirect('/service/confirm-replacement-address')
+  }
+})
+
 // contact-details
 
 router.post('/service/contact-address', function (req, res) {
