@@ -128,6 +128,30 @@ router.post('/service/applicant-acting', function (req, res) {
   }
 })
 
+// home-address-details
+
+router.post('/service/home-address', function (req, res) {
+  var errors = []
+  var postcodeHasError = false
+
+  if (req.session.data['uk-postcode'] === '') {
+    postcodeHasError = true
+    errors.push({
+      text: 'Enter a postcode',
+      href: '#uk-postcode'
+    })
+  }
+
+  if (postcodeHasError) {
+    res.render('service/home-address', {
+      errorPostcode: postcodeHasError,
+      errorList: errors
+    })
+  } else {
+    res.redirect('/service/confirm-home-address')
+  }
+})
+
 // contact-details
 
 router.post('/service/contact-address', function (req, res) {

@@ -21,26 +21,8 @@
 
       {{ govukSummaryList({
                classes: 'govuk-!-margin-bottom-9',
-
                rows: [
 
-                 {
-                   key: {
-                     text: "Company name"
-                   },
-                   value: {
-                     text: "ABC LTD"
-                   },
-             actions: {
-               items: [
-                 {
-                   href: "#",
-                   text: "Change",
-                   visuallyHiddenText: "name"
-                 }
-               ]
-             }
-                 },
                  {
                    key: {
                      text: "Company number"
@@ -51,15 +33,91 @@
              actions: {
                items: [
                  {
-                   href: "#",
+                   href: "company-details",
                    text: "Change",
                    visuallyHiddenText: "name"
                  }
                  ]
                }
-                }
+             }, {
+                key: {
+                  text: "Company name"
+                },
+                value: {
+                  text: "ABC LTD"
+                },
+          actions: {
+            items: [
+              {
+                href: "company-details",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+              }
               ]
             }) }}
+
+      <h2 class="govuk-heading-m">Applicant details</h2>
+
+      {{ govukSummaryList({
+                          classes: 'govuk-!-margin-bottom-9',
+                          rows: [
+                            {
+                              key: {
+                                text: "Full name"
+                              },
+                              value: {
+                                text: "Carl Thomas"
+                              },
+                           actions: {
+                             items: [
+                               {
+                                 href: "applicant-details",
+                                 text: "Change",
+                                 visuallyHiddenText: "name"
+                               }
+                             ]
+                           }
+                            },
+                            {
+                              key: {
+                                text: "Has the applicant used a different name on the Companies House register in the last 20 years?"
+                              },
+                              value: {
+                                text: "No"
+                              },
+                           actions: {
+                             items: [
+                               {
+                                 href: "applicant-details",
+                                 text: "Change",
+                                 visuallyHiddenText: "name"
+                               }
+                             ]
+                           }
+                            },
+                            {
+                              key: {
+                                text: "Date of birth"
+                              },
+                              value: {
+                                text: "5 January 1978"
+                              },
+                           actions: {
+                             items: [
+                               {
+                                 href: "applicant-details",
+                                 text: "Change",
+                                 visuallyHiddenText: "name"
+                               }
+                             ]
+                           }
+                            }
+                          ]
+                        }) }}
+
       <h2 class="govuk-heading-m">Document details</h2>
 
       {{ govukSummaryList({
@@ -76,7 +134,7 @@
              actions: {
                items: [
                  {
-                   href: "#",
+                   href: "document-details",
                    text: "Change",
                    visuallyHiddenText: "name"
                  }
@@ -93,7 +151,7 @@
              actions: {
                items: [
                  {
-                   href: "#",
+                   href: "document-details",
                    text: "Change",
                    visuallyHiddenText: "name"
                  }
@@ -110,7 +168,7 @@
            rows: [
              {
                key: {
-                 text: "What is the home address you want to remove from the document?"
+                 text: "Home address to remove"
                },
                value: {
                  html: "72 Guild Street<br>London<br>SE23 6FH"
@@ -119,7 +177,7 @@
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "home-address",
                   text: "Change",
                   visuallyHiddenText: "name"
                 }
@@ -133,8 +191,6 @@
       {{ govukSummaryList({
                   classes: 'govuk-!-margin-bottom-9',
                   rows: [
-
-
                     {
                       key: {
                         text: "Is the applicant a current officer of the company?"
@@ -145,7 +201,7 @@
                 actions: {
                   items: [
                     {
-                      href: "#",
+                      href: "applicant-acting",
                       text: "Change",
                       visuallyHiddenText: "name"
                     }
@@ -161,15 +217,15 @@
                  rows: [
                    {
                      key: {
-                       text: "What address do you want to replace the home address with?"
+                       text: "Address to replace the home address"
                      },
                      value: {
-                       html: "27 Staple Street<br>London<br>SE35 6YP"
+                       text: "Not required"
                      },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "replacement-address",
                   text: "Change",
                   visuallyHiddenText: "name"
                 }
@@ -178,64 +234,6 @@
                    }
                  ]
                }) }}
-      <h2 class="govuk-heading-m">Applicant details</h2>
-
-      {{ govukSummaryList({
-                    classes: 'govuk-!-margin-bottom-9',
-                    rows: [
-                      {
-                        key: {
-                          text: "Full name"
-                        },
-                        value: {
-                          text: "Carl Thomas"
-                        },
-                     actions: {
-                       items: [
-                         {
-                           href: "#",
-                           text: "Change",
-                           visuallyHiddenText: "name"
-                         }
-                       ]
-                     }
-                      },
-                      {
-                        key: {
-                          text: "Has the applicant used a different name on the Companies House register in the last 20 years?"
-                        },
-                        value: {
-                          text: "No"
-                        },
-                     actions: {
-                       items: [
-                         {
-                           href: "#",
-                           text: "Change",
-                           visuallyHiddenText: "name"
-                         }
-                       ]
-                     }
-                      },
-                      {
-                        key: {
-                          text: "Date of birth"
-                        },
-                        value: {
-                          text: "5 January 1978"
-                        },
-                     actions: {
-                       items: [
-                         {
-                           href: "#",
-                           text: "Change",
-                           visuallyHiddenText: "name"
-                         }
-                       ]
-                     }
-                      }
-                    ]
-                  }) }}
 
       <h2 class="govuk-heading-m">Contact details</h2>
 
@@ -252,7 +250,7 @@
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "contact-address",
                   text: "Change",
                   visuallyHiddenText: "name"
                 }
