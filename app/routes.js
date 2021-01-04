@@ -85,8 +85,8 @@ router.post('/service/document-details', function (req, res) {
   if (typeof req.session.data['document'] === 'undefined') {
     descriptionHasError = true
     errors.push({
-      text: 'Select a description',
-      href: '#document'
+      text: 'Select a document description',
+      href: '#document-conditional'
     })
   }
 
@@ -97,6 +97,30 @@ router.post('/service/document-details', function (req, res) {
     })
   } else {
     res.redirect('/service/home-address')
+  }
+})
+
+// home-address-details
+
+router.post('/service/home-address', function (req, res) {
+  var errors = []
+  var postcodeHasError = false
+
+  if (req.session.data['postcode'] === '') {
+    postcodeHasError = true
+    errors.push({
+      text: 'Enter a postcode',
+      href: '#postcode'
+    })
+  }
+
+  if (postcodeHasError) {
+    res.render('service/home-address', {
+      errorPostcode: postcodeHasError,
+      errorList: errors
+    })
+  } else {
+    res.redirect('/service/confirm-home-address')
   }
 })
 
@@ -125,30 +149,6 @@ router.post('/service/applicant-acting', function (req, res) {
       res.redirect('contact-address')
     }
     res.redirect('replacement-address')
-  }
-})
-
-// home-address-details
-
-router.post('/service/home-address', function (req, res) {
-  var errors = []
-  var postcodeHasError = false
-
-  if (req.session.data['uk-postcode'] === '') {
-    postcodeHasError = true
-    errors.push({
-      text: 'Enter a postcode',
-      href: '#uk-postcode'
-    })
-  }
-
-  if (postcodeHasError) {
-    res.render('service/home-address', {
-      errorPostcode: postcodeHasError,
-      errorList: errors
-    })
-  } else {
-    res.redirect('/service/confirm-home-address')
   }
 })
 

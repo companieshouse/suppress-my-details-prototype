@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="home-address" method="post">
+      <form action="/service/home-address" method="post">
         {% if errorPostcode == true %}
           {{ govukErrorSummary({
                titleText: "There is a problem",
@@ -39,8 +39,8 @@
       text: "Enter a postcode"
     },
   classes: "govuk-input--width-10",
-  id: "uk-postcode",
-  name: "uk-postcode"
+  id: "postcode",
+  name: "postcode"
  }) }}
         {% else %}
 
@@ -49,8 +49,8 @@
  text: "UK postcode"
  },
  classes: "govuk-input--width-10",
- id: "uk-postcode",
- name: "uk-postcode"
+ id: "postcode",
+ name: "postcode"
  }) }}
 
         {% endif %}
@@ -62,8 +62,8 @@
   hint: {
     text: "For example, 'The Mill', '116' or 'Flat 37a'"
   },
-  id: "uk-postcode",
-  name: "uk-postcode"
+  id: "property",
+  name: "property"
  }) }}
 
         <p>
