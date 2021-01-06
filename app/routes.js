@@ -43,7 +43,7 @@ router.post('/service/applicant-details', function (req, res) {
   if (req.session.data['full-name'] === '') {
     nameHasError = true
     errors.push({
-      text: 'Enter the applicant's full name',
+      text: "Enter the applicant's full name",
       href: '#full-name'
     })
   }
@@ -51,7 +51,7 @@ router.post('/service/applicant-details', function (req, res) {
   if (typeof req.session.data['changed-name'] === 'undefined') {
     changednameHasError = true
     errors.push({
-      text: 'Select yes if the applicant's name has changed',
+      text: "Select yes if the applicant's name has changed",
       href: '#changed-name'
     })
   }
