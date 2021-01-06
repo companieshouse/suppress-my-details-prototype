@@ -16,26 +16,44 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="confirm-home-address" method="GET">
+      <form action="/service/home-address" method="post">
+        {% if errorPostcode == true %}
+          {{ govukErrorSummary({
+               titleText: "There is a problem",
+               errorList: errorList
+             }) }}
+        {% endif %}
 
-        {% call govukFieldset({
-          legend: {
-            text: "What is the home address you want to remove from the document?",
-            classes: "govuk-fieldset__legend--l",
-            isPageHeading: true
-          }
-        }) %}
+        <h1 class="govuk-heading-l">
+          What is the home address you want to remove from the document?
+        </h1>
         <span id="changed-name-hint" class="govuk-hint">You cannot remove a registered office address from the public register, even if it's your home address.</span>
 
-        {{ govukInput({
+        {% if errorPostcode == true %}
+
+          {{ govukInput({
   label: {
     text: "UK postcode"
   },
+  errorMessage: {
+      text: "Enter a postcode"
+    },
   classes: "govuk-input--width-10",
-  id: "uk-postcode",
-  name: "uk-postcode"
-}) }}
+  id: "postcode",
+  name: "postcode"
+ }) }}
+        {% else %}
 
+          {{ govukInput({
+ label: {
+ text: "UK postcode"
+ },
+ classes: "govuk-input--width-10",
+ id: "postcode",
+ name: "postcode"
+ }) }}
+
+        {% endif %}
         {{ govukInput({
   label: {
     text: "Property name or number"
@@ -44,14 +62,13 @@
   hint: {
     text: "For example, 'The Mill', '116' or 'Flat 37a'"
   },
-  id: "uk-postcode",
-  name: "uk-postcode"
-}) }}
+  id: "property",
+  name: "property"
+ }) }}
 
         <p>
           <a href="">Enter the address manually</a>
         </p>
-        {% endcall %}
 
         {{ govukButton({
            text: "Continue"
