@@ -133,7 +133,7 @@ router.post('/service/applicant-acting', function (req, res) {
   if (typeof req.session.data['current-officer'] === 'undefined') {
     currentofficerHasError = true
     errors.push({
-      text: 'Select if the applicant is a current officer',
+      text: 'Select yes if the applicant is a current officer',
       href: '#current-officer'
     })
   }
