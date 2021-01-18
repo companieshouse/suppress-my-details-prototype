@@ -16,11 +16,15 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/service/document-details" method="post">
+      <form action="/service/home-address" method="post">
 
         <h1 class="govuk-heading-l">
           Which document do you want to remove a home address from?
         </h1>
+
+        <p class="govuk-body">You can check which documents contain a home address on the
+          <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.<br>
+        </p>
 
         {% set otherHtml %}
         {{ govukInput({
@@ -49,7 +53,7 @@
     name: "document",
     fieldset: {
       legend: {
-        text: "",
+        text: "What",
         isPageHeading: false,
         classes: "govuk-fieldset__legend--m"
       }
@@ -119,23 +123,10 @@
   name: "document",
   fieldset: {
     legend: {
-      text: "",
+      text: "What is the document filing type and description?",
       isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-fieldset__legend--s"
     }
-  },
-  hint: {
-    html: '<p class="govuk-body">You can check which documents contain a home address on the
-      <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.<br>
-    </p>
-
-    <p class="govuk-body">
-
-
-
-<p class="govuk-body">What is the document filing type and description?</p>
-    '
-
   },
 
 
@@ -188,55 +179,47 @@
           </summary>
           <div class="govuk-details__text">
 
-                <p class="govuk-body govuk-!-font-weight-bold">Document filing type</p>
-        <p class="govuk-body">In the filing history on the register, select 'Show filing type'. A new column will appear called 'Type'.</p>
+            <p class="govuk-body govuk-!-font-weight-bold">Document filing type</p>
+            <p class="govuk-body">In the filing history on the register, select 'Show filing type'. A new column will appear called 'Type'.</p>
 
-        <p class="govuk-body govuk-!-font-weight-bold">Document description</p>
-        <p class="govuk-body">This is in the 'Description' column of the filing history on the register.</p>
+            <p class="govuk-body govuk-!-font-weight-bold">Document description</p>
+            <p class="govuk-body">This is in the 'Description' column of the filing history on the register.</p>
 
           </div>
 
         </details>
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-
-<p class="govuk-body">What date was the document added to the register?</p>
-
-
-            <div id="document-date-hint" class="govuk-hint">
-              For example, 18 4 2019
-            </div>
-
-            <div class="govuk-date-input" id="document-date">
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="document-date-day">
-                    Day
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="document-date-day" name="document-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="document-date-month">
-                    Month
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="document-date-month" name="document-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="document-date-year">
-                    Year
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="document-date-year" name="document-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
-                </div>
-              </div>
-            </div>
-          </fieldset>
-        </div>
+        {{ govukDateInput({
+  id: "dob",
+  namePrefix: "dob",
+  fieldset: {
+    legend: {
+      text: "What date was the document added to the register?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 18 4 2019"
+  },
+  items: [
+    {
+      name: "day",
+      classes: "govuk-input--width-2",
+      autocomplete: "document-day"
+    },
+    {
+      name: "month",
+      classes: "govuk-input--width-2",
+      autocomplete: "document-month"
+    },
+    {
+      name: "year",
+      classes: "govuk-input--width-4",
+      autocomplete: "document-year"
+    }
+  ]
+}) }}
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
