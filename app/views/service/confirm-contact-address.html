@@ -4,31 +4,36 @@
   Confirm the contact address - Apply to remove your home address from the Companies House register - GOV.UK
 {% endblock %}
 
-{% block beforeContent %}
+{% block main %}
 
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
-{% endblock %}
+  <div class="govuk-width-container">
+    {% include "includes/phase-banner.html" %}
+    {% include "includes/user-bar.html" %}
+    {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
-{% block content %}
-  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+    <main class="govuk-main-wrapper" id="main-content" role="main">
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Confirm the contact address</h1>
-      <form class="form" action="check-your-answers" method="get">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">Confirm the contact address</h1>
+          <form class="form" action="check-your-answers" method="get">
 
-        <p>19 Regency Street<br>London<br>SE87 5PT</p>
+            <p>19 Regency Street<br>London<br>SE87 5PT</p>
 
-        <p>
-          <a href="">Change</a>
-        </p>
-        {{ govukButton({
+            <p>
+              <a href="">Change</a>
+            </p>
+            {{ govukButton({
           text: "Confirm and continue"
         }) }}
 
-      </form>
+          </form>
 
+        </div>
+      </main>
     </div>
-  </div>
 
-{% endblock %}
+  {% endblock %}
