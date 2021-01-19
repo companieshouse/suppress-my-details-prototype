@@ -196,7 +196,7 @@ router.post('/service/contact-address', function (req, res) {
       errorList: errors
     })
   } else {
-    res.redirect('/service/check-your-answers')
+    res.redirect('/service/confirm-contact-address')
   }
 })
 

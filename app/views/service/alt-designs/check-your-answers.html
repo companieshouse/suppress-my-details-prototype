@@ -1,0 +1,281 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Check your answers before you continue - Apply to remove your home address from the Companies House register - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Check your answers before you continue</h1>
+      <h2 class="govuk-heading-m">Company details</h2>
+
+      {{ govukSummaryList({
+               classes: 'govuk-!-margin-bottom-9',
+               rows: [
+
+                 {
+                   key: {
+                     text: "Company number"
+                   },
+                   value: {
+                     text: "09164758"
+                   },
+             actions: {
+               items: [
+                 {
+                   href: "company-details",
+                   text: "Change",
+                   visuallyHiddenText: "name"
+                 }
+                 ]
+               }
+             }, {
+                key: {
+                  text: "Company name"
+                },
+                value: {
+                  text: "ABC LTD"
+                },
+          actions: {
+            items: [
+              {
+                href: "company-details",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+              }
+              ]
+            }) }}
+
+      <h2 class="govuk-heading-m">Applicant details</h2>
+
+      {{ govukSummaryList({
+                          classes: 'govuk-!-margin-bottom-9',
+                          rows: [
+                            {
+                              key: {
+                                text: "Full name"
+                              },
+                              value: {
+                                text: "Carl Thomas"
+                              },
+                           actions: {
+                             items: [
+                               {
+                                 href: "applicant-details",
+                                 text: "Change",
+                                 visuallyHiddenText: "name"
+                               }
+                             ]
+                           }
+                            },
+                            {
+                              key: {
+                                text: "Has the applicant used a different name on the Companies House register in the last 20 years?"
+                              },
+                              value: {
+                                text: "No"
+                              },
+                           actions: {
+                             items: [
+                               {
+                                 href: "applicant-details",
+                                 text: "Change",
+                                 visuallyHiddenText: "name"
+                               }
+                             ]
+                           }
+                            },
+                            {
+                              key: {
+                                text: "Date of birth"
+                              },
+                              value: {
+                                text: "5 January 1978"
+                              },
+                           actions: {
+                             items: [
+                               {
+                                 href: "applicant-details",
+                                 text: "Change",
+                                 visuallyHiddenText: "name"
+                               }
+                             ]
+                           }
+                            }
+                          ]
+                        }) }}
+
+      <h2 class="govuk-heading-m">Document details</h2>
+
+      {{ govukSummaryList({
+               classes: 'govuk-!-margin-bottom-9',
+               rows: [
+
+                 {
+                   key: {
+                     text: "Document type and description"
+                   },
+                   value: {
+                     text: "AP01 - Appoint a director"
+                   },
+             actions: {
+               items: [
+                 {
+                   href: "document-details",
+                   text: "Change",
+                   visuallyHiddenText: "name"
+                 }
+               ]
+             }
+                 },
+                 {
+                   key: {
+                     text: "Document date"
+                   },
+                   value: {
+                     text: "5 December 2019"
+                   },
+             actions: {
+               items: [
+                 {
+                   href: "document-details",
+                   text: "Change",
+                   visuallyHiddenText: "name"
+                 }
+               ]
+             }
+                 }
+               ]
+             }) }}
+
+      <h2 class="govuk-heading-m">Home address details</h2>
+
+      {{ govukSummaryList({
+           classes: 'govuk-!-margin-bottom-9',
+           rows: [
+             {
+               key: {
+                 text: "Home address to remove"
+               },
+               value: {
+                 html: "1 Home Road<br>Rumney<br>Cardiff<br>Wales<br>CF3 3EA"
+               },
+
+            actions: {
+              items: [
+                {
+                  href: "home-address",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+             }
+           ]
+         }) }}
+      <h2 class="govuk-heading-m">Applicant status</h2>
+
+      {{ govukSummaryList({
+                  classes: 'govuk-!-margin-bottom-9',
+                  rows: [
+                    {
+                      key: {
+                        text: "Is the applicant a current officer of the company?"
+                      },
+                      value: {
+                        text: "No"
+                      },
+                actions: {
+                  items: [
+                    {
+                      href: "applicant-acting",
+                      text: "Change",
+                      visuallyHiddenText: "name"
+                    }
+                  ]
+                }
+                    }
+                  ]
+                }) }}
+      <h2 class="govuk-heading-m">Replacement address details</h2>
+
+      {{ govukSummaryList({
+                 classes: 'govuk-!-margin-bottom-9',
+                 rows: [
+                   {
+                     key: {
+                       text: "Address to replace the home address"
+                     },
+                     value: {
+                       text: "Not required"
+                     },
+            actions: {
+              items: [
+                {
+                  href: "replacement-address",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+                   }
+                 ]
+               }) }}
+
+      <h2 class="govuk-heading-m">Contact details</h2>
+
+      {{ govukSummaryList({
+                       classes: 'govuk-!-margin-bottom-9',
+                       rows: [
+                      {
+                             key: {
+                               text: "Contact address"
+                             },
+                             value: {
+                               html: "19 Regency Street<br>London<br>SE87 5PT"
+                             },
+            actions: {
+              items: [
+                {
+                  href: "contact-address",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+                           }
+                       ]
+                     }) }}
+
+      <h2 class="govuk-heading-m">Confirm authorisation</h2>
+
+      <p class="govuk-body">By continuing, you confirm that you are authorised to submit this application and to the best of your knowledge, the details you've provided are correct.</p>
+
+      <form action="payment-review" method="post" novalidate="novalidate">
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        {{ govukButton({
+             text: "Confirm and continue"
+           }) }}
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
