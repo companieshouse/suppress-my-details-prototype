@@ -19,12 +19,8 @@
       <form action="/service/document-details" method="post">
 
         <h1 class="govuk-heading-l">
-          Which document do you want to remove a home address from?
+          Document details
         </h1>
-
-        <p class="govuk-body">You can check which documents contain a home address on the
-          <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.<br>
-        </p>
 
         {% set otherHtml %}
         {{ govukInput({
@@ -33,7 +29,7 @@
     type: "text",
     classes: "govuk-!-width-two-thirds",
     label: {
-      text: "Enter the document filing type and description"
+      text: "Document filing type and description"
     },
     hint: {
       html: 'You can only apply to remove a home address from certain documents. Check the
@@ -53,9 +49,9 @@
     name: "document",
     fieldset: {
       legend: {
-        text: "What is the document filing type and description?",
+        text: "",
         isPageHeading: false,
-        classes: "govuk-fieldset__legend--s"
+        classes: "govuk-fieldset__legend--m"
       }
     },
     hint: {
@@ -66,17 +62,15 @@
       <p class="govuk-body">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
 
-          Document filing type and description
+          Which document do you want to remove your home address from?
 
         </legend>
-
       </p>'
 
     },
     errorMessage: {
-        text: "Select a document filing type and description"
+        text: "Select a document description"
       },
-
     items: [
     {
       value: "AP01",
@@ -123,12 +117,25 @@
   name: "document",
   fieldset: {
     legend: {
-      text: "What is the document filing type and description?",
+      text: "",
       isPageHeading: false,
-      classes: "govuk-fieldset__legend--s"
+      classes: "govuk-fieldset__legend--m"
     }
   },
+  hint: {
+    html: '<p class="govuk-body">You can check which documents contain a home address on the
+      <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.<br><br>
+    The document filing type and description are shown at the top of the PDF document or in the filing history on the Companies House register.</p>
 
+    <p class="govuk-body">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+        Which document do you want to remove a home address from?
+
+      </legend>
+    </p>'
+
+  },
 
   items: [
   {
@@ -157,7 +164,7 @@
     },
     {
       value: "NewInc",
-      text: "NEWINC - Incorporation"
+      text: "Incorporation"
     },
       {
         value: "text",
@@ -171,65 +178,59 @@
 }) }}
 
         {% endif %}
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Where can I find the document filing type and description?
-            </span>
-          </summary>
-          <div class="govuk-details__text">
 
-            <p class="govuk-body govuk-!-font-weight-bold">Document filing type</p>
-            <p class="govuk-body">In the filing history on the register, select 'Show filing type'. A new column will appear called 'Type'.</p>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
 
-            <p class="govuk-body govuk-!-font-weight-bold">Document description</p>
-            <p class="govuk-body">This is in the 'Description' column of the filing history on the register.</p>
+                What date was the document added to the register?
 
-          </div>
+              </legend>
+            </legend>
+            <div id="document-date-hint" class="govuk-hint">
+              For example, 18 11 2019
+            </div>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Where can I find the document date?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                You can find the document date in the date column of the filing history on the
+                <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.
+              </div>
+            </details>
+            <div class="govuk-date-input" id="document-date">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="document-date-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="document-date-day" name="document-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="document-date-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="document-date-month" name="document-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="document-date-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="document-date-year" name="document-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
 
-        </details>
-
-        {{ govukDateInput({
-  id: "dob",
-  namePrefix: "dob",
-  fieldset: {
-    legend: {
-      text: "What date was the document added to the register?",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  hint: {
-    text: "For example, 18 4 2019"
-  },
-  items: [
-    {
-      name: "day",
-      classes: "govuk-input--width-2",
-      autocomplete: "document-day"
-    },
-    {
-      name: "month",
-      classes: "govuk-input--width-2",
-      autocomplete: "document-month"
-    },
-    {
-      name: "year",
-      classes: "govuk-input--width-4",
-      autocomplete: "document-year"
-    }
-  ]
-}) }}
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Where can I find the document date?
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            This is in the 'Date' column of the filing history on the register.
-          </div>
-        </details>
         {{ govukButton({
            text: "Continue"
          }) }}
