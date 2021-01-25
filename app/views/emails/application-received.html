@@ -12,14 +12,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-
-
       <h1 class="govuk-heading-l">Application received:
         <br>Apply to remove your home address from the Companies House register</h1>
 
-        <h2 class="govuk-heading-m">Reference numbers</h2>
+      <h2 class="govuk-heading-m">Reference numbers</h2>
 
-        {{ govukSummaryList({
+      {{ govukSummaryList({
                          classes: 'govuk-!-margin-bottom-9',
                          rows: [
                            {
@@ -92,24 +90,13 @@
            ]
          }) }}
 
-         <h2 class="govuk-heading-m">Contact details</h2>
+      <h2 class="govuk-heading-m">Contact details</h2>
 
-         {{ govukSummaryList({
+      {{ govukSummaryList({
                           classes: 'govuk-!-margin-bottom-9',
                           rows: [
 
-                            {
-                              key: {
-                                text: "Contact address"
-                              },
-                              value: {
-                                html: "19 Regency Street<br>London<br>SE87 5PT"
-                              },
-               actions: {
-                 items: [
-                 ]
-               }
-                            },  {
+                             {
                                 key: {
                                   text: "Email address"
                                 },
@@ -145,9 +132,9 @@
            ]
          }) }}
 
-         <h2 class="govuk-heading-m">Replacement address details</h2>
+      <h2 class="govuk-heading-m">Replacement address details</h2>
 
-         {{ govukSummaryList({
+      {{ govukSummaryList({
                     classes: 'govuk-!-margin-bottom-9',
                     rows: [
                       {

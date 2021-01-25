@@ -146,7 +146,7 @@ router.post('/service/applicant-acting', function (req, res) {
     // Branching based on answer
   } else {
     if (req.session.data['current-officer'] === 'no') {
-      res.redirect('contact-address')
+      res.redirect('check-your-answers')
     }
     res.redirect('replacement-address')
   }
@@ -173,30 +173,6 @@ router.post('/service/replacement-address', function (req, res) {
     })
   } else {
     res.redirect('/service/confirm-replacement-address')
-  }
-})
-
-// contact-details
-
-router.post('/service/contact-address', function (req, res) {
-  var errors = []
-  var postcodeHasError = false
-
-  if (req.session.data['uk-postcode'] === '') {
-    postcodeHasError = true
-    errors.push({
-      text: 'Enter a postcode',
-      href: '#uk-postcode'
-    })
-  }
-
-  if (postcodeHasError) {
-    res.render('service/contact-address', {
-      errorPostcode: postcodeHasError,
-      errorList: errors
-    })
-  } else {
-    res.redirect('/service/confirm-contact-address')
   }
 })
 
