@@ -1,0 +1,217 @@
+{% extends "emails/layout-email.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Application rejected
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Application received:
+        <br>Apply to remove your home address from the Companies House register</h1>
+
+      <h2 class="govuk-heading-m">Reference numbers</h2>
+
+      {{ govukSummaryList({
+                         classes: 'govuk-!-margin-bottom-9',
+                         rows: [
+                           {
+                             key: {
+                               text: "Application reference number"
+                             },
+                             value: {
+                               text: "N4OBD-U2SGP"
+                             },
+              actions: {
+                items: [
+                ]
+              }
+                           },  {
+                               key: {
+                                 text: "Payment reference number"
+                               },
+                               value: {
+                                 html: "4Y385E3FC2"
+                               },
+              actions: {
+                items: [
+                ]
+              }
+                             }
+                         ]
+                       }) }}
+
+      <h2 class="govuk-heading-m">Applicant details</h2>
+
+      {{ govukSummaryList({
+           classes: 'govuk-!-margin-bottom-9',
+           rows: [
+             {
+               key: {
+                 text: "Full name"
+               },
+               value: {
+                 text: "Carl Thomas"
+               },
+            actions: {
+              items: [
+              ]
+            }
+             },
+             {
+               key: {
+                 text: "Has the applicant used a different name on the Companies House register in the last 20 years?"
+               },
+               value: {
+                 text: "No"
+               },
+            actions: {
+              items: [
+              ]
+            }
+             },
+             {
+               key: {
+                 text: "Date of birth"
+               },
+               value: {
+                 text: "5 January 1978"
+               },
+            actions: {
+              items: [
+              ]
+            }
+             }
+           ]
+         }) }}
+
+      <h2 class="govuk-heading-m">Contact details</h2>
+
+      {{ govukSummaryList({
+                          classes: 'govuk-!-margin-bottom-9',
+                          rows: [
+
+                             {
+                                key: {
+                                  text: "Email address"
+                                },
+                                value: {
+                                  text: "cthomas@gmail.com"
+                                },
+               actions: {
+                 items: [
+                 ]
+               }
+                              }
+                          ]
+                        }) }}
+
+      <h2 class="govuk-heading-m">Home address details</h2>
+
+      {{ govukSummaryList({
+           classes: 'govuk-!-margin-bottom-9',
+           rows: [
+             {
+               key: {
+                 text: "What is the home address you want to remove from the document?"
+               },
+               value: {
+                 html: "72 Guild Street<br>London<br>SE23 6FH"
+               },
+
+            actions: {
+              items: [
+              ]
+            }
+             }
+           ]
+         }) }}
+
+      <h2 class="govuk-heading-m">Replacement address details</h2>
+
+      {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9',
+                    rows: [
+                      {
+                        key: {
+                          text: "What address do you want to replace your home address with?"
+                        },
+                        value: {
+                          html: "Not required"
+                        },
+               actions: {
+                 items: [
+                 ]
+               }
+                      }
+                    ]
+                  }) }}
+
+      <h2 class="govuk-heading-m">Document details</h2>
+
+      {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Company number"
+                  },
+                  value: {
+                    text: "09164758"
+                  },
+            actions: {
+              items: [
+              ]
+            }
+                },
+                {
+                  key: {
+                    text: "Company name"
+                  },
+                  value: {
+                    text: "ABC LTD"
+                  },
+            actions: {
+              items: [
+              ]
+            }
+                },
+                {
+                  key: {
+                    text: "Document name and description"
+                  },
+                  value: {
+                    text: "AP01 - Appoint a director"
+                  },
+            actions: {
+              items: [
+              ]
+            }
+                },
+                {
+                  key: {
+                    text: "Date the document was added to the register"
+                  },
+                  value: {
+                    text: "5 December 2019"
+                  },
+            actions: {
+              items: [
+              ]
+            }
+                }
+              ]
+            }) }}
+
+    </form>
+
+  </div>
+</div>
+</div>
+
+{% endblock %}
