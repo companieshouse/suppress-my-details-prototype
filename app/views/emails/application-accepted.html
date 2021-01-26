@@ -1,217 +1,101 @@
 {% extends "emails/layout-email.html" %}
-
-<!-- Adds a class to increase vertical spacing for pages without a back button -->
-{% set mainClasses = "govuk-main-wrapper--l" %}
-
-{% block pageTitle %}
-  Application accepted
-{% endblock %}
-
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      {% set buttonHref = "Your reference number is <br> N4OBD-U2SGP" %}
+      {{ govukPanel({
+        titleText: "Application successful",
+        html: buttonHref
+      }) }}
 
-      <h1 class="govuk-heading-l">Application received:
-        <br>Apply to remove your home address from the Companies House register</h1>
+      {{ govukTable({
+  caption: "",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "",
+      classes: 'govuk-!-width-one-half'
+    },
+    {
+      text: "",
+      classes: 'govuk-!-width-one-half'
+    }
+  ],
+  rows: [
+  [
+    {
+      text: "Full name"
+    },
+    {
+      text: "Daniel Thomas"
+    }
+  ],[
+      {
+        text: "Company number"
+      },
+      {
+        text: "09164758"
+      }
+    ],
+    [
+      {
+        text: "Company name"
+      },
+      {
+        text: "ABC LTD"
+      }
+    ],
+    [
+      {
+        text: "Document description"
+      },
+      {
+        text: "AP01 - Appoint a director"
+      }
+    ],
+    [
+      {
+        text: "Date document added to the register"
+      },
+      {
+        text: "5 December 2019"
+      }
+    ],
+    [
+      {
+        text: "Payment received"
+      },
+      {
+        text: "£32"
+      }
+    ]
+  ]
+}) }}
+  <p class="govuk-body">Your application to remove your home address from the document requested was successful.</p>
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">We will remove your home address from the document in your application. It can take up to 2 days for the changes to show on the Companies House public register. Until then, this document will not be available to view.</p>
+          <p class="govuk-body">You should check that your home address has been removed as requested on the Companies House register in the next few days.</p>
+      <h2 class="govuk-heading-m">Contact us</h2>
+      <p class="govuk-body">If you have a question about your application, you can contact us.</p>
+      <h3 class="govuk-heading-s">Telephone</h3>
+      <ul class="govuk-list">
+        <li>0303 1234 500</li>
+        <li>Monday to Friday, 8:30am to 6pm</li>
+      </ul>
+      <p class="govuk-body">
+        <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+      </p>
 
-      <h2 class="govuk-heading-m">Reference numbers</h2>
+      <h3 class="govuk-heading-s">Email</h3>
 
-      {{ govukSummaryList({
-                         classes: 'govuk-!-margin-bottom-9',
-                         rows: [
-                           {
-                             key: {
-                               text: "Application reference number"
-                             },
-                             value: {
-                               text: "N4OBD-U2SGP"
-                             },
-              actions: {
-                items: [
-                ]
-              }
-                           },  {
-                               key: {
-                                 text: "Payment reference number"
-                               },
-                               value: {
-                                 html: "4Y385E3FC2"
-                               },
-              actions: {
-                items: [
-                ]
-              }
-                             }
-                         ]
-                       }) }}
-
-      <h2 class="govuk-heading-m">Applicant details</h2>
-
-      {{ govukSummaryList({
-           classes: 'govuk-!-margin-bottom-9',
-           rows: [
-             {
-               key: {
-                 text: "Full name"
-               },
-               value: {
-                 text: "Daniel Thomas"
-               },
-            actions: {
-              items: [
-              ]
-            }
-             },
-             {
-               key: {
-                 text: "Has the applicant used a different name on the Companies House register in the last 20 years?"
-               },
-               value: {
-                 text: "No"
-               },
-            actions: {
-              items: [
-              ]
-            }
-             },
-             {
-               key: {
-                 text: "Date of birth"
-               },
-               value: {
-                 text: "5 January 1978"
-               },
-            actions: {
-              items: [
-              ]
-            }
-             }
-           ]
-         }) }}
-
-      <h2 class="govuk-heading-m">Contact details</h2>
-
-      {{ govukSummaryList({
-                          classes: 'govuk-!-margin-bottom-9',
-                          rows: [
-
-                             {
-                                key: {
-                                  text: "Email address"
-                                },
-                                value: {
-                                  text: "cthomas@gmail.com"
-                                },
-               actions: {
-                 items: [
-                 ]
-               }
-                              }
-                          ]
-                        }) }}
-
-      <h2 class="govuk-heading-m">Home address details</h2>
-
-      {{ govukSummaryList({
-           classes: 'govuk-!-margin-bottom-9',
-           rows: [
-             {
-               key: {
-                 text: "What is the home address you want to remove from the document?"
-               },
-               value: {
-                 html: "72 Guild Street<br>London<br>SE23 6FH"
-               },
-
-            actions: {
-              items: [
-              ]
-            }
-             }
-           ]
-         }) }}
-
-      <h2 class="govuk-heading-m">Replacement address details</h2>
-
-      {{ govukSummaryList({
-                    classes: 'govuk-!-margin-bottom-9',
-                    rows: [
-                      {
-                        key: {
-                          text: "What address do you want to replace your home address with?"
-                        },
-                        value: {
-                          html: "Not required"
-                        },
-               actions: {
-                 items: [
-                 ]
-               }
-                      }
-                    ]
-                  }) }}
-
-      <h2 class="govuk-heading-m">Document details</h2>
-
-      {{ govukSummaryList({
-              classes: 'govuk-!-margin-bottom-9',
-              rows: [
-                {
-                  key: {
-                    text: "Company number"
-                  },
-                  value: {
-                    text: "09164758"
-                  },
-            actions: {
-              items: [
-              ]
-            }
-                },
-                {
-                  key: {
-                    text: "Company name"
-                  },
-                  value: {
-                    text: "ABC LTD"
-                  },
-            actions: {
-              items: [
-              ]
-            }
-                },
-                {
-                  key: {
-                    text: "Document name and description"
-                  },
-                  value: {
-                    text: "AP01 - Appoint a director"
-                  },
-            actions: {
-              items: [
-              ]
-            }
-                },
-                {
-                  key: {
-                    text: "Date the document was added to the register"
-                  },
-                  value: {
-                    text: "5 December 2019"
-                  },
-            actions: {
-              items: [
-              ]
-            }
-                }
-              ]
-            }) }}
-
-    </form>
-
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/call-charges">enquiries@companieshouse.gov.uk</a>
+        </li>
+      </ul>
+      <h2 class="govuk-heading-m">Feedback</h2>
+      <p class="govuk-body">This is a new service. Help us improve it by completing our
+        <a href="https://www.research.net/r/remove-home-add-email-conf" class="govuk-link">quick survey</a>.</p>
+    </div>
   </div>
-</div>
-</div>
-
 {% endblock %}
