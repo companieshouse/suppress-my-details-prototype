@@ -1,4 +1,7 @@
 {% extends "emails/layout-email.html" %}
+{% block pageTitle %}
+  Application rejected email
+{% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -77,23 +80,26 @@
       </ul>
       <h2 class="govuk-heading-m">What happens next</h2>
       <p class="govuk-body">Your fee will be refunded to the original method of payment.</p>
-      <p class="govuk-body">You should correct the reject reason before you <a href="https://suppress-my-details-v5.herokuapp.com/service/start" class="govuk-link">submit a new application</a>.</p>
-        <h2 class="govuk-heading-m">Contact us</h2>
-        <p class="govuk-body">If you have a question about your application, you can contact us.</p>
-    <h3 class="govuk-heading-s">Telephone</h3>
-    <ul class="govuk-list">
-    <li>0303 1234 500</li>
-    <li>Monday to Friday, 8:30am to 6pm</li>
-    </ul>
-    <p class="govuk-body">
-    <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
-    </p>
+      <p class="govuk-body">You should correct the reject reason before you
+        <a href="https://suppress-my-details-v5.herokuapp.com/service/start" class="govuk-link">submit a new application</a>.</p>
+      <h2 class="govuk-heading-m">Contact us</h2>
+      <p class="govuk-body">If you have a question about your application, you can contact us.</p>
+      <h3 class="govuk-heading-s">Telephone</h3>
+      <ul class="govuk-list">
+        <li>0303 1234 500</li>
+        <li>Monday to Friday, 8:30am to 6pm</li>
+      </ul>
+      <p class="govuk-body">
+        <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+      </p>
 
-    <h3 class="govuk-heading-s">Email</h3>
+      <h3 class="govuk-heading-s">Email</h3>
 
-    <ul class="govuk-list">
-    <li><a class="govuk-link" href="https://www.gov.uk/call-charges">enquiries@companieshouse.gov.uk</a></li>
-    </ul>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="https://www.gov.uk/call-charges">enquiries@companieshouse.gov.uk</a>
+        </li>
+      </ul>
     </div>
   </div>
 {% endblock %}
