@@ -85,7 +85,7 @@ router.post('/service/document-details', function (req, res) {
   if (typeof req.session.data['document'] === 'undefined') {
     descriptionHasError = true
     errors.push({
-      text: 'Select a document description',
+      text: 'Select a document filing type and description',
       href: '#document-conditional'
     })
   }
