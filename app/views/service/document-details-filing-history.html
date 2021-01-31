@@ -1,0 +1,207 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Which document do you want to remove a home address from?
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Which document(s) do you want to remove a home address from?</h1>
+    </div>
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-m">ABC LTD
+      </h2>
+      <p class="govuk-body">Company number
+        <span class="govuk-body govuk-!-font-weight-bold">
+          09164758</span>
+      </p>
+
+      {{ govukInsetText({
+      html: "<h3 class='govuk-heading-m' id='documentsSelectedCountTop'>0 documents selected</h3>
+    <ul id='documentsSelectedList' class='govuk-list govuk-list--bullet'>
+    </ul>"
+    }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <div class="govuk-grid-column-one-quarter">
+
+        <h2 class="govuk-heading-m">Filter by category</h2>
+
+      </div>
+
+      <div class="govuk-grid-column-one-quarter">
+
+        {{ govukCheckboxes({
+  idPrefix: "filter-items",
+  name: "filter-items",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "accounts",
+      text: "Accounts",
+      name: "accounts"
+    },
+    {
+      value: "captial",
+      text: "Capital"
+    },
+    {
+      value: "charges",
+      text: "Charges"
+    }
+  ]
+}) }}
+
+      </div>
+
+      <div class="govuk-grid-column-one-half">
+
+        {{ govukCheckboxes({
+  idPrefix: "filter-item-2",
+  name: "filter-item-2",
+  classes: "govuk-checkboxes--small",
+  fieldset: {
+    legend: {
+      text: "",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "confirmation-statements-annual-return",
+      text: "Confirmation statements / Annual returns"
+    },
+    {
+      value: "incorporation",
+      text: "Incorporation"
+    },
+    {
+      value: "officers",
+      text: "Officers"
+    }
+  ]
+}) }}
+      </div>
+
+      {{ govukTable({
+        caption: "",
+        head: [
+          {
+            text: "Select"
+          },
+          {
+            text: "Date ",
+            classes: "no-wrap"
+          },
+          {
+            text: "Type",
+            classes: "document-type"
+          },
+          {
+            text: "Description"
+          },
+          {
+            text: "Fee"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                      <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+              ,
+              classes: "no-wrap"
+            },
+            {
+              text: "04 Dec 2017",
+              classes: "no-wrap"
+            },
+            {
+            html: "TM02",
+            classes: "document-type"
+            },
+            {
+              text:"Termination of appointment of Secretary Ltd as a secretary on 4 December 2017."
+            },
+            {
+              text:"£32"
+            }
+          ],
+           [
+            {
+              html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                      <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>',
+              classes: "no-wrap"
+            },
+            {
+              html: "29 Aug 1977"
+            },
+
+            {
+              html: "TM02",
+              classes: "document-type"
+            },
+
+            {
+              html:"Director's details changed for Eduardo Sanchez on 14 August 1997."
+            },
+            {
+              text:"£32"
+            }
+          ],
+           [
+            {
+              html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                      <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>',
+              classes: "no-wrap"
+            },
+            {
+              html: "04 Dec 2017"
+            },
+            {
+              html: "TM01",
+              classes: "document-type"
+            },
+
+            {
+              html:"Termination of appointment of Secretary Ltd as a secretary on 4 December 2017."
+            },
+            {
+              text:"£32"
+            }
+          ]
+        ]
+      }) }}
+
+      <h3 class='govuk-heading-m' id='documentsSelectedCountBottom'>0 documents selected</h3>
+
+      {{ govukButton({
+          text: "Add documents to application",
+          href:""
+        }) }}
+
+    </div>
+  {% endblock %}
