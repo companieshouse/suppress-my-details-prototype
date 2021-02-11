@@ -1,5 +1,4 @@
 @include govuk-exports("govuk/component/panel") {
-
   .govuk-panel {
     @include govuk-font($size: 19);
 
@@ -20,6 +19,12 @@
   .govuk-panel--confirmation {
     color: govuk-colour("white");
     background: govuk-colour("green", $legacy: "turquoise");
+
+    @include govuk-media-query($media-type: print) {
+      border-color: currentColor;
+      color: $govuk-print-text-colour;
+      background: none;
+    }
   }
 
   .govuk-panel__title {
@@ -36,5 +41,4 @@
   .govuk-panel__body {
     @include govuk-font($size: 36);
   }
-
 }
