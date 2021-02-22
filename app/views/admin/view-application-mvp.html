@@ -35,17 +35,6 @@
       border-bottom: 10px solid #005ea5;
       z-index: 1;
     }
-    #myBtn {
-      display: none;
-      /* Hidden by default */
-      position: sticky;
-      /* Fixed/sticky position */
-      bottom: 20px;
-      /* Place the button at the bottom of the page */
-      z-index: 99;
-      /* Make sure it does not overlap */
-
-    }
   </style>
   <ul id="navigation" class="mobile-hidden">
     <li class="user" id="signed-in-user">user@companieshouse.gov.uk
@@ -54,7 +43,10 @@
       <a href="/account/login" id="user-signout">Sign out</a>
     </li>
   </ul>
-  <a class="govuk-back-link no-print" href="/applications/applications-list-mvp">Back</a>
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -67,163 +59,148 @@
 
     </div>
   </div>
-  <div class=" govuk-tabs" data-module=" tabs" ="tabs" ">
-    <h2 class="govuk-tabs__title">
-      Contents
-    </h2>
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">
-        <h2 class="govuk-heading-l">Overview</h2>
-      </div>
-    </div>
-    <p>Application received at 15:34 on Tuesday 30 July</p>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">Overview</h2>
 
-    <h2 class="govuk-heading-m">Applicant details</h2>
-
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Full name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Miss Tanya Jones
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Email address
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="mailto:tanya@email.com">tanya@email.com</a>
-        </dd>
-      </div>
-    </dl>
-    <h2 class="govuk-heading-m">Address to remove</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Building and street
-        </dt>
-        <dd class="govuk-summary-list__value">
-          12 Crown Way
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Town or city
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Cardiff
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          County
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Test
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Postcode
-        </dt>
-        <dd class="govuk-summary-list__value">
-          CF92 1AB
-        </dd>
-      </div>
-    </dl>
-    <h2 class="govuk-heading-m">Service address</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Building and street
-        </dt>
-        <dd class="govuk-summary-list__value"></dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Town or city
-        </dt>
-        <dd class="govuk-summary-list__value"></dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          County
-        </dt>
-        <dd class="govuk-summary-list__value"></dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Postcode
-        </dt>
-        <dd class="govuk-summary-list__value"></dd>
-      </div>
-    </dl>
-    <h2 class="govuk-heading-m">Document details</h2>
-
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Company name
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Way Ahead Community Services
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Company number
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="https://beta.companieshouse.gov.uk/company/03116636">03116636</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Document type
-        </dt>
-        <dd class="govuk-summary-list__value">
-          AP01
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Document registration date
-        </dt>
-        <dd class="govuk-summary-list__value">
-          12/04/2007
-        </dd>
-      </div>
-
-    </dl>
-
-    <h2 class="govuk-heading-m">Payment information</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Payment ID
-        </dt>
-        <dd class="govuk-summary-list__value">
-          ABCDEfghij123456
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Application reference
-        </dt>
-        <dd class="govuk-summary-list__value">
-          ABcd123
+      <p>Application received at 15:34 on Tuesday 30 July 2020</p>
+      <h2 class="govuk-heading-m">Reference numbers</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Payment ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ABCDEfghij123456
+          </dd>
         </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Application reference
+          </dt>
+          <dd class="govuk-summary-list__value">
+            N4OBD-U2SGP
+          </div>
 
-      </dl>
+        </dl>
+        <h2 class="govuk-heading-m">Applicant details</h2>
 
-      <button onclick="topFunction()" class="govuk-button govuk-button--secondary float-right no-print" id="myBtn" title="Back to top">Back to top</button>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Full name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Miss Tanya Jones
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Has the applicant used a different name on the Companies House register in the last 20 years?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              No
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              5 January 1978
+            </dd>
+          </div>
+
+        </dl>
+        <h2 class="govuk-heading-m">Contact details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="mailto:tanya@email.com">tanya@gmail.com</a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Home address details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Building and street
+            </dt>
+            <dd class="govuk-summary-list__value">
+              12 Crown Way
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Town or city
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Cardiff
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              County
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Test
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Postcode
+            </dt>
+            <dd class="govuk-summary-list__value">
+              CF92 1AB
+            </dd>
+          </div>
+        </dl>
+        <h2 class="govuk-heading-m">Document details</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Company number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a href="https://beta.companieshouse.gov.uk/company/03116636">03116636</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Company name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Way Ahead Community Services
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Document name and description
+            </dt>
+            <dd class="govuk-summary-list__value">
+              AP01 - Appoint a director
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date the document was added to the register
+            </dt>
+            <dd class="govuk-summary-list__value">
+              12/04/2007
+            </dd>
+          </div>
+
+        </dl>
+      </div>
     </div>
-
   </div>
-</div>
 
 {% endblock %}
