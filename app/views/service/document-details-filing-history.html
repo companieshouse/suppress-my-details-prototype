@@ -24,82 +24,6 @@
           09164758</span>
       </p>
 
-      {{ govukInsetText({
-      html: "<h3 class='govuk-heading-m' id='documentsSelectedCountTop'>0 documents selected</h3>
-    <ul id='documentsSelectedList' class='govuk-list govuk-list--bullet'>
-    </ul>"
-    }) }}
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <div class="govuk-grid-column-one-quarter">
-
-        <h2 class="govuk-heading-m">Filter by category</h2>
-
-      </div>
-
-      <div class="govuk-grid-column-one-quarter">
-
-        {{ govukCheckboxes({
-  idPrefix: "filter-items",
-  name: "filter-items",
-  classes: "govuk-checkboxes--small",
-  fieldset: {
-    legend: {
-      text: "",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "accounts",
-      text: "Accounts",
-      name: "accounts"
-    },
-    {
-      value: "captial",
-      text: "Capital"
-    },
-    {
-      value: "charges",
-      text: "Charges"
-    }
-  ]
-}) }}
-
-      </div>
-
-      <div class="govuk-grid-column-one-half">
-
-        {{ govukCheckboxes({
-  idPrefix: "filter-item-2",
-  name: "filter-item-2",
-  classes: "govuk-checkboxes--small",
-  fieldset: {
-    legend: {
-      text: "",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "confirmation-statements-annual-return",
-      text: "Confirmation statements / Annual returns"
-    },
-    {
-      value: "incorporation",
-      text: "Incorporation"
-    },
-    {
-      value: "officers",
-      text: "Officers"
-    }
-  ]
-}) }}
-      </div>
-
       {{ govukTable({
         caption: "",
         head: [
@@ -189,7 +113,12 @@
         ]
       }) }}
 
-      <h3 class='govuk-heading-m' id='documentsSelectedCountBottom'>0 documents selected</h3>
+      {{ govukInsetText({
+      html: "<h3 class='govuk-heading-m' id='documentsSelectedCountTop'>0 documents selected</h3>
+      <p>Total amount to pay - £0</p>
+    <ul id='documentsSelectedList' class='govuk-list govuk-list--bullet'>
+    </ul>"
+    }) }}
 
       {{ govukButton({
           text: "Add documents to application",
