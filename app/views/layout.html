@@ -37,41 +37,7 @@
 {% block pageTitle %}
   GOV.UK Prototype Kit
 {% endblock %}
-{% block bodyStart %}
-  {% set html %}
-  <p>We use some essential cookies to make our services work.</p>
-  <p>We'd also like to use analytics cookies so we can understand how you use our services and to make improvements.</p>
-  {% endset %}
-  {{ govukCookieBanner({
-ariaLabel: "Cookies on Companies House services",
-messages: [
-  {
-    headingText: "Cookies on Companies House services",
-    html: html,
-    actions: [
-      {
-        text: "Accept analytics cookies",
-        type: "button",
-        name: "cookies",
-        value: "accept",
-        classes: "cookie-button"
-      },
-      {
-        text: "Reject analytics cookies",
-        type: "button",
-        name: "cookies",
-        value: "reject",
-        classes: "cookie-button"
-      },
-      {
-        text: "View cookies",
-        href: "https://find-and-update.company-information.service.gov.uk/help/cookies"
-      }
-    ]
-  }
-]
-}) }}
-{% endblock %}
+
 {% block header %}
 
   {# Set serviceName in config.js. #}
