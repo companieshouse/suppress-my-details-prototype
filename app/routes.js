@@ -1,7 +1,13 @@
-const express = require('express')
-const router = express.Router()
+//
+// For guidance on how to create routes see:
+// https://prototype-kit.service.gov.uk/docs/create-routes
+//
 
-// Add your routes here - above the module.exports line
+const govukPrototypeKit = require('govuk-prototype-kit')
+const router = govukPrototypeKit.requests.setupRouter()
+
+// Add your routes here
+
 
 router.get('/', function (req, res) {
   req.session.destroy()
@@ -85,7 +91,7 @@ router.post('/service/document-details', function (req, res) {
   if (typeof req.session.data['document'] === 'undefined') {
     descriptionHasError = true
     errors.push({
-      text: 'Select a document description',
+      text: 'Select a document filing type and description',
       href: '#document-conditional'
     })
   }
@@ -146,7 +152,7 @@ router.post('/service/applicant-acting', function (req, res) {
     // Branching based on answer
   } else {
     if (req.session.data['current-officer'] === 'no') {
-      res.redirect('contact-address')
+      res.redirect('check-your-answers')
     }
     res.redirect('replacement-address')
   }
@@ -176,28 +182,3 @@ router.post('/service/replacement-address', function (req, res) {
   }
 })
 
-// contact-details
-
-router.post('/service/contact-address', function (req, res) {
-  var errors = []
-  var postcodeHasError = false
-
-  if (req.session.data['uk-postcode'] === '') {
-    postcodeHasError = true
-    errors.push({
-      text: 'Enter a postcode',
-      href: '#uk-postcode'
-    })
-  }
-
-  if (postcodeHasError) {
-    res.render('service/contact-address', {
-      errorPostcode: postcodeHasError,
-      errorList: errors
-    })
-  } else {
-    res.redirect('/service/check-your-answers')
-  }
-})
-
-module.exports = router

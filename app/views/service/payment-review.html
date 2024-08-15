@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
   Review your payment - Apply to remove your home address from the Companies House register - GOV.UK
@@ -7,7 +7,7 @@
 
 {% block beforeContent %}
   {% include "includes/phase-banner.html" %}
-
+  {% include "includes/user-bar.html" %}
   <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="https://products.payments.service.gov.uk/pay/c179774cecf14fd9a46736e1d4fa99d0" method="get" class="form">
+      <form action="https://products.payments.service.gov.uk/pay/6cdc8ac420c5416d9c4cde07635725e5" method="get" class="form">
         <h1 class="govuk-heading-l">
           Review your payment
         </h1>

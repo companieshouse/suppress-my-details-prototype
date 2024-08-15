@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 <!-- Adds a class to increase vertical spacing for pages without a back button -->
 {% set mainClasses = "govuk-main-wrapper--l" %}
@@ -8,7 +8,7 @@
 {% endblock %}
 {% block beforeContent %}
   {% include "includes/phase-banner.html" %}
-
+  {% include "includes/user-bar.html" %}
   <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 {% block content %}
@@ -69,7 +69,7 @@
                                 text: "Full name"
                               },
                               value: {
-                                text: "Carl Thomas"
+                                text: "Daniel Thomas"
                               },
                            actions: {
                              items: [
@@ -210,55 +210,6 @@
                     }
                   ]
                 }) }}
-      <h2 class="govuk-heading-m">Replacement address details</h2>
-
-      {{ govukSummaryList({
-                 classes: 'govuk-!-margin-bottom-9',
-                 rows: [
-                   {
-                     key: {
-                       text: "Address to replace the home address"
-                     },
-                     value: {
-                       text: "Not required"
-                     },
-            actions: {
-              items: [
-                {
-                  href: "replacement-address",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-                   }
-                 ]
-               }) }}
-
-      <h2 class="govuk-heading-m">Contact details</h2>
-
-      {{ govukSummaryList({
-                       classes: 'govuk-!-margin-bottom-9',
-                       rows: [
-                      {
-                             key: {
-                               text: "Contact address"
-                             },
-                             value: {
-                               html: "19 Regency Street<br>London<br>SE87 5PT"
-                             },
-            actions: {
-              items: [
-                {
-                  href: "contact-address",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-                           }
-                       ]
-                     }) }}
 
       <h2 class="govuk-heading-m">Confirm authorisation</h2>
 

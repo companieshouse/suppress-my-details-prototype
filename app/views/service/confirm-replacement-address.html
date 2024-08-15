@@ -1,38 +1,46 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
   Confirm this is the address you want to replace your home address with - Apply to remove your home address from the Companies House register - GOV.UK
 {% endblock %}
+{% block main %}
 
-{% block beforeContent %}
+  <div class="govuk-width-container">
+    {% include "includes/phase-banner.html" %}
+    {% include "includes/user-bar.html" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:history.back()"
+    }) }}
 
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
-{% endblock %}
+    <main class="govuk-main-wrapper" id="main-content" role="main">
 
-{% block content %}
-  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">Confirm this is the address you want to replace your home address with</h1>
+          <form class="form" action="check-your-answers" method="get">
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Confirm this is the address you want to replace your home address with</h1>
-      <form class="form" action="contact-address" method="get">
+            <p>22 Cotton Road<br>
+              Newton Heath
+              <br>
+              Manchester
+              <br>M40 1PF</p>
 
-        <p>22 Cotton Road<br>
-          Newton Heath
-          <br>
-          Manchester
-          <br>M40 1PF</p>
-
-        <p>
-          <a href="">Change</a>
-        </p>
-        {{ govukButton({
+            <p>
+              <a href="">Change address</a>
+            </p>
+            {{ govukButton({
           text: "Confirm and continue"
         }) }}
 
-      </form>
+          </form>
+        </div>
+        <!--govuk-grid-row-->
+      </div>
+      <!--govuk-grid-column-two-thirds-->
 
-    </div>
+    </main>
   </div>
+  <!---govuk-width-container-->
 
 {% endblock %}

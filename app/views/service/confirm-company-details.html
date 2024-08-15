@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 {% block pageTitle %}
   Confirm this is the correct company - Apply to remove your home address from the Companies House register - GOV.UK
 {% endblock %}
@@ -6,7 +6,7 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase-banner.html" %}
-    {{ govukBackLink({
+    {% include "includes/user-bar.html" %}{{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
   }) }}
@@ -55,7 +55,9 @@
     }
   ]
 }) }}
-
+            <p class="govuk-body">
+              <a class="govuk-link" href="company-details">Change company</a>
+            </p>
             {{ govukButton({
                 text: "Confirm and continue"
               }) }}

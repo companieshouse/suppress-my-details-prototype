@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 {% block pageTitle %}
   Is the company dissolved (closed)?
 {% endblock %}
@@ -6,7 +6,7 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase-banner.html" %}
-    {{ govukBackLink({
+    {% include "includes/user-bar.html" %}{{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
   }) }}

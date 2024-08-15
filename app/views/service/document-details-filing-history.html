@@ -1,0 +1,129 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Which document do you want to remove a home address from?
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Which document(s) do you want to remove a home address from?</h1>
+    </div>
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-m">ABC LTD
+      </h2>
+      <p class="govuk-body">Company number
+        <span class="govuk-body govuk-!-font-weight-bold">
+          09164758</span>
+      </p>
+
+      {{ govukTable({
+        caption: "",
+        head: [
+          {
+            text: "Select"
+          },
+          {
+            text: "Date ",
+            classes: "no-wrap"
+          },
+          {
+            text: "Description"
+          },
+          {
+            text: "View / download"
+          },
+          {
+            text: "Fee"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                      <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>'
+              ,
+              classes: "no-wrap"
+            },
+            {
+              text: "04 Jan 2008",
+              classes: "no-wrap"
+            },
+
+            {
+              text:"Appointment of Mr Daniel Thomas as a director on 4 January 2008"
+            },
+            {
+              html:'<a href="">View PDF </a><br>(5 pages)'
+            },
+            {
+              text:"£32"
+            }
+          ],
+           [
+            {
+              html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                      <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>',
+              classes: "no-wrap"
+            },
+            {
+              html: "12 Oct 2016"
+            },
+
+            {
+              html:"Director's details changed for Mr John Paul Davies on 10 October 2016."
+            },{
+              html:'<a href="">View PDF </a><br>(10 pages)'
+            },
+            {
+              text:"£32"
+            }
+          ],
+           [
+            {
+              html: ' <div class="govuk-checkboxes govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" name="rowCheckBox" type="checkbox">
+                      <label class="govuk-label govuk-checkboxes__label">&nbsp</label></div></div>',
+              classes: "no-wrap"
+            },
+            {
+              html: "04 Dec 2017"
+            },
+            {
+              html:"Termination of appointment of Secretary Ltd as a secretary on 4 December 2017."
+            },{
+              html:'<a href="">View PDF </a><br>(3 pages)'
+            },
+            {
+              text:"£32"
+            }
+          ]
+        ]
+      }) }}
+
+      {{ govukInsetText({
+      html: "<h3 class='govuk-heading-m' id='documentsSelectedCountTop'>0 documents selected</h3>
+      <p>Total amount to pay - £0</p>
+    <ul id='documentsSelectedList' class='govuk-list govuk-list--bullet'>
+    </ul>"
+    }) }}
+
+      {{ govukButton({
+          text: "Add documents to application",
+          href:""
+        }) }}
+
+    </div>
+  {% endblock %}

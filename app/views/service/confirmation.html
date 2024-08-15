@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 <!-- Adds a class to increase vertical spacing for pages without a back button -->
 {% set mainClasses = "govuk-main-wrapper--l" %}
@@ -8,6 +8,7 @@
 {% endblock %}
 {% block beforeContent %}
   {% include "includes/phase-banner.html" %}
+  {% include "includes/user-bar.html" %}
 {% endblock %}
 {% block content %}
 
@@ -41,7 +42,7 @@
             text: "Full name"
           },
           {
-            text: "Carl Thomas"
+            text: "Daniel Thomas"
           }
         ],
           [
@@ -88,9 +89,9 @@
       }) }}
       <h3 class="govuk-heading-m">What happens next</h3>
       <p class="govuk-body">We will send a confirmation email to
-        <strong>cthomas@gmail.com</strong>
+        <strong>dthomas@gmail.com</strong>
         which contains your reference number.</p>
-      <p class="govuk-body">We will review your application to remove your home address from this document. We’ll email you to let you know if your application was successful. It usually takes around 28 working days to review an application.</p>
+      <p class="govuk-body">We will review your application to remove your home address from this document. We’ll email you to let you know if your application was successful. It usually takes around 14 days to review an application.</p>
 
       {{ govukWarningText({
     text: "Warning: Due to the impact of coronavirus (COVID-19), it could take longer than usual to process applications.",
@@ -98,9 +99,17 @@
   }) }}
     </div>
   </div>
-  <p class="govuk-body">
-    <a class="govuk-link" href="start">Submit another application</a>
-  </p>
+
+  <h3 class="govuk-heading-m">What do you want to do next?</h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      <a class="govuk-link" href="document-details">Remove a home address from another document for ABC LTD</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="company-details">Remove a home address from another document for a different company</a>
+    </li>
+  </ul>
+
   <h3 class="govuk-heading-m">Contact us</h3>
   <p class="govuk-body">If you have a question about your application, you can contact us.</p>
   <h3 class="govuk-heading-s">Telephone</h3>

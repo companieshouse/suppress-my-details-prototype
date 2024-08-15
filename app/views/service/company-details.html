@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 {% block pageTitle %}
   What is the company number? - Apply to remove your home address from the Companies House register - GOV.UK
 {% endblock %}
@@ -10,6 +10,7 @@
 
   <div class="govuk-width-container">
     {% include "includes/phase-banner.html" %}
+    {% include "includes/user-bar.html" %}
     {{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
@@ -68,9 +69,8 @@
                 </span>
               </summary>
               <div class="govuk-details__text">
-                Use the
-                <a href="https://staging.company-information.service.gov.uk/" class="govuk-link">Companies House service</a>
-                to find it.
+                You can find the company number by using the
+                <a href="https://staging.company-information.service.gov.uk/" class="govuk-link">Companies House service (opens in a new tab)</a>.
               </div>
             </details>
 

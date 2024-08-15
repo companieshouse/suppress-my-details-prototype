@@ -1,0 +1,154 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Document details - Apply to remove your home address from the Companies House register - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <!-- DEVS: Ignore the HTML here, it's not correct, but it means the error validation works -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="home-address" method="GET">
+
+        <h1 class="govuk-heading-l">
+          Document details
+        </h1>
+
+        {% set textHtml %}
+        {{ govukInput({
+    id: "contact-by-text",
+    name: "contact-by-text",
+    type: "tel",
+    classes: "govuk-!-width-two-thirds",
+    label: {
+      text: "Type and description of document"
+    }
+    ,
+    hint: {
+      html: 'You can only apply to remove your home address from certain documents. Check the
+      <a href="https://www.gov.uk/government/publications/apply-to-remove-your-home-address-from-the-public-register-sr01/list-of-documents" class="govuk-link" rel="noreferrer noopener" target="_blank">list of documents you can apply to remove your home address from (opens in a new tab)</a>.'
+    }
+  }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+    idPrefix: "how-contacted-conditional",
+    name: "how-contacted",
+    fieldset: {
+      legend: {
+        text: "Which document do you want to remove your home address from?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+ 
+
+    items: [
+    {
+      value: "AP01",
+      text: "AP01 - Appoint a director"
+    },
+    {
+      value: "CH01",
+      text: "CH01 - Change of director's details"
+    },
+      {
+        value: "AR01",
+        text: "AR01 - Annual return"
+      },
+      {
+        value: "363a",
+        text: "363a - Annual return"
+      },
+      {
+        value: "363s",
+        text: "363s - Annual return"
+      },
+      {
+        value: "288a",
+        text: "288a - Appoint a director or secretary"
+      },
+      {
+        value: "NewInc",
+        text: "Incorporation"
+      },
+        {
+          value: "text",
+          text: "Other document",
+          conditional: {
+            html: textHtml
+          }
+      }
+
+    ]
+  }) }}
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+                What date was the document added to the register?
+
+              </legend>
+            </legend>
+            <div id="document-date-hint" class="govuk-hint">
+              For example, 18 11 2019
+            </div>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Where can I find the document date?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                You can find it in the date column of the filing history on the
+                <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.
+              </div>
+            </details>
+            <div class="govuk-date-input" id="document-date">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="document-date-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="document-date-day" name="document-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="document-date-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="document-date-month" name="document-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="document-date-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="document-date-year" name="document-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+           text: "Continue"
+         }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

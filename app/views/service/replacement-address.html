@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
   What address do you want to replace the home address with? - Apply to remove your home address from the Companies House register - GOV.UK
@@ -6,7 +6,7 @@
 
 {% block beforeContent %}
   {% include "includes/phase-banner.html" %}
-
+  {% include "includes/user-bar.html" %}
   <a class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 

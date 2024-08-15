@@ -1,25 +1,21 @@
 {% extends "emails/layout-email.html" %}
-
+{% block pageTitle %}
+  Application received email
+{% endblock %}
 <!-- Adds a class to increase vertical spacing for pages without a back button -->
 {% set mainClasses = "govuk-main-wrapper--l" %}
-
-{% block pageTitle %}
-  Application received
-{% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-
-
       <h1 class="govuk-heading-l">Application received:
         <br>Apply to remove your home address from the Companies House register</h1>
 
-        <h2 class="govuk-heading-m">Reference numbers</h2>
+      <h2 class="govuk-heading-m">Reference numbers</h2>
 
-        {{ govukSummaryList({
+      {{ govukSummaryList({
                          classes: 'govuk-!-margin-bottom-9',
                          rows: [
                            {
@@ -58,7 +54,7 @@
                  text: "Full name"
                },
                value: {
-                 text: "Carl Thomas"
+                 text: "Daniel Thomas"
                },
             actions: {
               items: [
@@ -92,29 +88,18 @@
            ]
          }) }}
 
-         <h2 class="govuk-heading-m">Contact details</h2>
+      <h2 class="govuk-heading-m">Contact details</h2>
 
-         {{ govukSummaryList({
+      {{ govukSummaryList({
                           classes: 'govuk-!-margin-bottom-9',
                           rows: [
 
-                            {
-                              key: {
-                                text: "Contact address"
-                              },
-                              value: {
-                                html: "19 Regency Street<br>London<br>SE87 5PT"
-                              },
-               actions: {
-                 items: [
-                 ]
-               }
-                            },  {
+                             {
                                 key: {
                                   text: "Email address"
                                 },
                                 value: {
-                                  text: "cthomas@gmail.com"
+                                  text: "dthomas@gmail.com"
                                 },
                actions: {
                  items: [
@@ -134,7 +119,7 @@
                  text: "What is the home address you want to remove from the document?"
                },
                value: {
-                 html: "72 Guild Street<br>London<br>SE23 6FH"
+                 html: "1 Home Road<br>Rumney<br>Cardiff<br>Wales<br>CF3 3EA"
                },
 
             actions: {
@@ -145,9 +130,9 @@
            ]
          }) }}
 
-         <h2 class="govuk-heading-m">Replacement address details</h2>
+      <h2 class="govuk-heading-m">Replacement address details</h2>
 
-         {{ govukSummaryList({
+      {{ govukSummaryList({
                     classes: 'govuk-!-margin-bottom-9',
                     rows: [
                       {
