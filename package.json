@@ -7,9 +7,21 @@
   "name": "govuk-prototype-kit",
   "dependencies": {
     "@govuk-prototype-kit/step-by-step": "2.2.3",
-    "govuk-frontend": "5.5.0",
+    "browser-sync": "^3.0.2",
+    "del": "^7.1.0",
+    "engine.io": "^6.6.0",
+    "engine.io-parser": "^5.2.3",
+    "fast-glob": "^3.3.2",
+    "globby": "^14.0.2",
+    "govuk-frontend": "^5.5.0",
     "govuk-prototype-kit": "13.16.2",
     "jquery": "3.7.1",
-    "notifications-node-client": "5.2.3"
+    "notifications-node-client": "5.2.3",
+    "rxjs": "^7.8.1",
+    "socket.io": "^4.7.5",
+    "socket.io-adapter": "^2.5.5",
+    "socket.io-parser": "^4.2.4",
+    "universal-analytics": "^0.5.3",
+    "uuid": "^10.0.0"
   }
 }
